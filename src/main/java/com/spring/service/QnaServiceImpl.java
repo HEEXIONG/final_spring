@@ -28,26 +28,27 @@ public class QnaServiceImpl implements QnaService{
 
 	@Override
 	public QnaVO get(Long qno) {
-
-		return null;
+		log.info("글 조회" + qno);
+		
+		return mapper.read(qno);
 	}
 
 	@Override
 	public boolean modify(QnaVO board) {
-
-		return false;
+		log.info("수정~~~" + board);
+		return mapper.update(board)==1;
 	}
 
 	@Override
 	public boolean remove(Long qno) {
-
-		return false;
+		log.info("삭제"+qno);
+		return mapper.delete(qno)==1;
 	}
 
 	@Override
 	public List<QnaVO> getList() {
-
-		return null;
+		log.info("리스트!!!!");
+		return mapper.getList();
 	}
 
 }
