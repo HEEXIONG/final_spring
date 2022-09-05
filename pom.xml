@@ -198,7 +198,11 @@
 	
 		<!-- 아래 dependency들은 기존에 있던 dependency 내용들입니다.
          	  위에 version 변경되는 것들만 별도 참고 바랍니다. -->
-	
+			<dependency>
+	    	<groupId>com.oracle.database.jdbc</groupId>
+	    	<artifactId>ojdbc6</artifactId>
+	    	<version>11.2.0.4</version>
+		</dependency>
 	
 	
 		<!-- Spring -->
