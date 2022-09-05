@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="spring.project.mapper.QnaMapper">
+
+	<select id="getList" resultType="spring.project.domain.QnaVO">
+		<![CDATA[
+			select * from qna_board where qno > 0
+		]]>
+	
+	</select>
+	
+	<insert id="insert">
+		insert into qna_board(qno, q_title, q_content, q_writer)
+		values (qna_seq.nextval, #{q_title}, #{q_content}, #{q_writer})
+	</insert>
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="qno" order="BEFORE" resultType="long">
+			select qna_seq.nextval from dual
+		</selectKey>
+		insert into qna_board(qno, q_title, q_content, q_writer)
+		values (#{qno}, #{q_title}, #{q_content}, #{q_writer})
+		
+	</insert>
+
+	
+	<select id="read" resultType="spring.project.domain.QnaVO">
+		select * from qna_board where qno = #{qno}
+	</select>
+	
+	<delete id="delete">
+		delete from qna_board where qno = #{qno}
+	</delete>
+
+	<update id="update">
+		update qna_board
+		set q_title=#{q_title},
+		q_content=#{q_content},
+		q_writer=#{q_writer},
+		updatedate = sysdate
+		where qno =#{qno}
+	</update>
+
+
+
+</mapper>
+
