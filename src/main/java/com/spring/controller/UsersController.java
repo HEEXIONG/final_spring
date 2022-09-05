@@ -43,22 +43,31 @@ public class UsersController {
 		log.info("stp");
 		userserivce.userInsert(uservo);
 		log.warn("회원가입 완료");
-		return "redirect:/users/testMain";
+		return "redirect:/";
 	}
 	//아이디중복확인
 	@PostMapping("/userIdChk")
 	@ResponseBody
-	public String userIdChk(String USER_ID) {
-		log.warn("useridchk 진입");
-		int result = userserivce.idCheck(USER_ID);
-		
+	public String userIdChk(String userId) {
+		//log.warn("useridchk 진입");
+		int result = userserivce.idCheck(userId);
 		if(result != 0) {
 			return "fail";
-		}else {
+		} else {
 			return "success";
 		}
-		
 	}//아이디 중복 확인 종료
-	
+	//닉네임 중복 확인
+	@PostMapping("/usernickChk")
+	@ResponseBody
+	public String usernickChk(String usernick) {
+		//log.warn("useridchk 진입");
+		int result = userserivce.nickCheck(usernick);
+		if(result != 0) {
+			return "fail";
+		} else {
+			return "success";
+		}
+	}
 
 }

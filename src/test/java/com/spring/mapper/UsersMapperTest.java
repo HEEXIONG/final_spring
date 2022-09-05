@@ -31,5 +31,15 @@ public class UsersMapperTest {
 		mapper.userInsert(vo);
 		
 	}
+	@Test
+	public void idchk() {
+		String id = "테스트4";
+		String id2 = "하이하이";
+		
+		mapper.idCheck(id);
+		mapper.idCheck(id2);
+		
+		
+	}
 
 }

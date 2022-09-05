@@ -13,9 +13,12 @@ VALUES(user_seq.nextval,#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{U
 </insert>
 
 <select id="idCheck" resultType="int">
-
-
+select count(*) from users where USER_ID = #{USER_ID}
 </select>
+<select id="nickCheck" resultType="int">
+select count(*) from users where USER_NICKNAME = #{USER_NICKNAME}
+</select>
+
 
 
 

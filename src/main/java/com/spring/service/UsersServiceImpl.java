@@ -18,4 +18,14 @@ public class UsersServiceImpl implements UsersService {
 		
 	}
 
+	@Override
+	public int idCheck(String USER_ID) {
+		return mapper.idCheck(USER_ID);
+	}
+
+	@Override
+	public int nickCheck(String USER_NICKNAME) {
+		return mapper.nickCheck(USER_NICKNAME);
+	}
+
 }
