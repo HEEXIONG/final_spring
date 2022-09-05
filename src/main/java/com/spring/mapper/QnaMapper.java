@@ -2,6 +2,7 @@ package com.spring.mapper;
 
 import java.util.List;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.QnaVO;
 
 public interface QnaMapper {
@@ -17,6 +18,11 @@ public interface QnaMapper {
 	public int delete(Long qno);
 	
 	public int update(QnaVO board);
+	
+	
+	//페이징
+	public List<QnaVO> getListWithPaging(Criteria cri);
+	
 	
 	
 }
