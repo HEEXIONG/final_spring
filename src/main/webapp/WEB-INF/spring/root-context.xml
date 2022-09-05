@@ -27,9 +27,9 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	<mybatis-spring:scan base-package="spring.project.mapper"/>
+	<mybatis-spring:scan base-package="com.spring.mapper"/>
 	
-	<context:component-scan base-package="spring.project.service"/>
+	<context:component-scan base-package="com.spring.service"/>
 	
 	
 	

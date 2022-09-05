@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="spring.project.mapper.QnaMapper">
+<mapper namespace="com.spring.mapper.QnaMapper">
 
 	<select id="getList" resultType="com.spring.domain.QnaVO">
 		<![CDATA[
