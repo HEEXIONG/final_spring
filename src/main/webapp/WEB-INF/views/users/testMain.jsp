@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <style type="text/css">
 .login_button_wrap{
 	margin-top: 40px;
@@ -16,7 +18,7 @@
     color: white;
     margin : auto;
 </style>
-	<title>Home</title>
+<title>Insert title here</title>
 </head>
 <body>
 <h1>연습용 메인페이지입니다</h1>
@@ -24,5 +26,6 @@
 <div class="login_button_wrap">
 <input type="submit" class="login_button" value="유저로그인">
 </div>	
+</form>
 </body>
 </html>
