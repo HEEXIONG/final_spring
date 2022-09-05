@@ -5,7 +5,7 @@
 
 <mapper namespace="spring.project.mapper.QnaMapper">
 
-	<select id="getList" resultType="spring.project.domain.QnaVO">
+	<select id="getList" resultType="com.spring.domain.QnaVO">
 		<![CDATA[
 			select * from qna_board where qno > 0
 		]]>
@@ -26,7 +26,7 @@
 	</insert>
 
 	
-	<select id="read" resultType="spring.project.domain.QnaVO">
+	<select id="read" resultType="com.spring.domain.QnaVO">
 		select * from qna_board where qno = #{qno}
 	</select>
 	

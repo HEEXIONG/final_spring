@@ -27,9 +27,9 @@ public class QnaMapperTests {
 	@Test
 	public void testInsert() {
 		QnaVO board = new QnaVO();
-		board.setQ_title("테스트 제목222");
-		board.setQ_content("테스트 내용33");
-		board.setQ_writer("테스트 작성자44");
+		board.setQ_title("테스트 ");
+		board.setQ_content("테스트");
+		board.setQ_writer("테스트 ");
 		mapper.insert(board);
 		log.info(board);
 	}
