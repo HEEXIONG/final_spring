@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.domain.UsersVO;
 import com.spring.service.UsersService;
@@ -26,15 +27,11 @@ public class UsersController {
 	//테스트 메인페이지
 	@GetMapping("/testMain")
 	public void testmain(){
-		
 	}
-	
-	
-	
 	//회원가입페이지(get)
 	@GetMapping("/insert")
 	public void insertget() {
-		log.warn("warn");
+		log.warn("회원가입 페이지");
 		log.info("info");
 	}
 	//회원가입페이지(post)
@@ -45,6 +42,23 @@ public class UsersController {
 		log.warn("회원가입 완료");
 		return "redirect:/";
 	}
+	
+	@PostMapping("/uploadAjaxAction")
+	//MultipartFile은 뷰에서 전송한 multipart 타입의 파일을 다룰 수 있게 해줌.
+	//파일 이름 , 사이즈 반환 ,파일을 특정경로에  저장할 수 있게 해줌.
+	//uploadFile은 view단의 formdata key값이랑 맞춰줌
+	//[]유무 : 파일 여러개 받을지
+	public void imageuploadAjax(MultipartFile[] uploadFile) {
+		//파일 저장 위치 설정
+		String uploadFolder = "C:\\";
+		for (MultipartFile multipartFile : uploadFile) {
+		log.warn("파일 이름" + multipartFile.getOriginalFilename());
+		log.warn("파일 타입" + multipartFile.getContentType());
+		log.warn("파일 이름" + multipartFile.getSize());
+		}
+	}
+	
+	
 	//아이디중복확인
 	@PostMapping("/userIdChk")
 	@ResponseBody
