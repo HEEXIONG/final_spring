@@ -16,6 +16,11 @@ public class UsersServiceImpl implements UsersService {
 	public void userInsert(UsersVO vo) {
 		mapper.userInsert(vo);
 		
+		vo.getImageList().forEach(attach ->{
+			attach.setUSER_NO(vo.getUSER_NO());
+			mapper.imageInsert(attach);
+		});
+		
 	}
 
 	
