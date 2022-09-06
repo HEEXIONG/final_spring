@@ -1,11 +1,14 @@
 package spring.project.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.QnaVO;
 import com.spring.mapper.QnaMapper;
 
@@ -57,6 +60,22 @@ public class QnaMapperTests {
 		log.info("update : " + count);
 		
 	}
+	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria();
+		
+		//10개씩 3페이지
+		cri.setPageNum(3);
+		cri.setAmount(10);
+		
+		List<QnaVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.warn(board));
+	}
+	
+	
+	
+	
 	
 	
 

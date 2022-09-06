@@ -22,8 +22,8 @@
             </div>
             <div class="row">
                   <div class="col-lg-12">
-                      <button type="button" class="btn btn-outline btn-primary pull-right" >
-                          <i class="fa fa-edit fa-fw"></i> Q&A 작성
+                      <button type="button" class="btn btn-outline btn-primary pull-right" onclick="location.href='/qna/register'">
+                          Q&A 작성
                       </button>
                   </div>
               </div>

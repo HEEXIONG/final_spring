@@ -20,6 +20,14 @@
 </head>
 <body>
 <h1>연습용 메인페이지입니다</h1>
+
+<form action="/qna/list">
+<div class="login_button_wrap">
+<input type="submit" value="Q&A게시판">
+</div>
+</form>
+
+
 <form action="/users/insert">
 <div class="login_button_wrap">
 <input type="submit" class="login_button" value="유저로그인">

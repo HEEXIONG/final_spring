@@ -42,6 +42,26 @@
 		updatedate = sysdate
 		where qno =#{qno}
 	</update>
+	
+ 	<select id="getListWithPaging" resultType="com.spring.domain.QnaVO">
+		<![CDATA[
+			select
+				qno,q_title,q_content,q_writer,regdate,updatedate
+			from
+				(
+				select /*+INDEX_DESC(qna_board pk_board) */
+				rownum rn, qno, q_title, q_content, q_writer, regdate, updatedate
+				from
+				qna_board
+				where rownum <= #{pageNum} * #{amount}
+				)
+				where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+
+	
+
 
 
 
