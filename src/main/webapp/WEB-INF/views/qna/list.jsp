@@ -47,8 +47,12 @@
                         <c:forEach items="${list}" var="QnaVO">
                             <tr>
                                 <td><c:out value="${QnaVO.qno}"/></td>
-                                <td><a href='/qna/get?qno=<c:out value="${QnaVO.qno}"/>'>
-                                <c:out value="${QnaVO.q_title}"/></a></td>
+                            
+                                <td><a class='move' href='<c:out value="${QnaVO.qno}"/>'>
+									<c:out value="${QnaVO.q_title}" />
+									
+                               <%--  <td><a href='/qna/get?qno=<c:out value="${QnaVO.qno}"/>'> --%>
+                               <%--  <c:out value="${QnaVO.q_title}"/></a></td> --%>
                                 <td><c:out value="${QnaVO.q_content}"/></td>
                                 <td><c:out value="${QnaVO.q_writer}"/></td>
                                
@@ -150,7 +154,7 @@
 						// list.jsp에서  Register New Board 버튼 클릭하면
 						// 게시물의 등록 웹페이지로 이동 처리 합니다.
 						$("#regBtn").on("click", function() {
-							self.location = "/board/register";
+							self.location = "/qna/register";
 						});
 						// Page 250 아래 자바스크립트 소스 코딩 끝
 
@@ -176,9 +180,9 @@
 						// Page 315 자바스크립트 소스 코딩 시작
 						$(".move").on("click",function(e) {
 								e.preventDefault();
-								actionForm.append("<input type='hidden' name='bno' value='"
+								actionForm.append("<input type='hidden' name='qno' value='"
 															+ $(this).attr("href") + "'>");
-								actionForm.attr("action","/board/get");
+								actionForm.attr("action","/qna/get");
 								actionForm.submit();
 								});
 						// Page 315 자바스크립트 소스 코딩 끝
