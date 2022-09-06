@@ -50,7 +50,7 @@ public class UsersController {
 	//[]유무 : 파일 여러개 받을지
 	public void imageuploadAjax(MultipartFile[] uploadFile) {
 		//파일 저장 위치 설정
-		String uploadFolder = "C:\\";
+		/* String uploadFolder = "C:\\"; */
 		for (MultipartFile multipartFile : uploadFile) {
 		log.warn("파일 이름" + multipartFile.getOriginalFilename());
 		log.warn("파일 타입" + multipartFile.getContentType());
