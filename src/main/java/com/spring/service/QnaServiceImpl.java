@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.QnaVO;
 import com.spring.mapper.QnaMapper;
 
@@ -45,10 +46,31 @@ public class QnaServiceImpl implements QnaService{
 		return mapper.delete(qno)==1;
 	}
 
-	@Override
-	public List<QnaVO> getList() {
-		log.info("리스트!!!!");
-		return mapper.getList();
-	}
 
+//	@Override
+//	public List<QnaVO> getList() {
+//		log.info("리스트!!!!");
+//		return mapper.getList();
+//	}
+
+	@Override
+	public List<QnaVO> getList(Criteria cri) {
+		log.info("페이징~~~ : " + cri);
+		return mapper.getListWithPaging(cri);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

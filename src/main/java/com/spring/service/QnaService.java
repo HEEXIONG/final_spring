@@ -2,6 +2,7 @@ package com.spring.service;
 
 import java.util.List;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.QnaVO;
 
 public interface QnaService {
@@ -14,7 +15,9 @@ public interface QnaService {
 	
 	public boolean remove(Long qno);
 	
-	public List<QnaVO> getList();
+	//public List<QnaVO> getList();
+	public List<QnaVO> getList(Criteria cri);
+	
 	
 	
 	
