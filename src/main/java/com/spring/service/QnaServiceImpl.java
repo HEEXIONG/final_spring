@@ -55,7 +55,7 @@ public class QnaServiceImpl implements QnaService{
 
 	@Override
 	public List<QnaVO> getList(Criteria cri) {
-		log.warn("페이징~~~ : " + cri);
+		log.info("페이징~~~ : " + cri);
 		return mapper.getListWithPaging(cri);
 	}
 	
