@@ -58,6 +58,13 @@ public class QnaServiceImpl implements QnaService{
 		log.info("페이징~~~ : " + cri);
 		return mapper.getListWithPaging(cri);
 	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		log.info("전체 갯수");
+		
+		return mapper.getTotalCount(cri);
+	}
 	
 	
 	

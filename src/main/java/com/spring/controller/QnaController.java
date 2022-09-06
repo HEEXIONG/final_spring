@@ -38,6 +38,10 @@ public class QnaController {
 		model.addAttribute("list", service.getList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, 50));
 		
+		int total = service.getTotal(cri);
+		log.info("총 개수" + total);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+		
 	}
 	
 	@PostMapping("/register")

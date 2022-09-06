@@ -23,6 +23,9 @@ public interface QnaMapper {
 	//페이징
 	public List<QnaVO> getListWithPaging(Criteria cri);
 	
+	//전체개수
+	public int getTotalCount(Criteria cri);
+	
 	
 	
 }

@@ -59,6 +59,9 @@
 		]]>
 	</select>
 	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from qna_board where qno > 0
+	</select>
 
 	
 

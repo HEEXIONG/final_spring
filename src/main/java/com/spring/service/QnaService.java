@@ -19,7 +19,7 @@ public interface QnaService {
 	public List<QnaVO> getList(Criteria cri);
 	
 	
-	
+	public int getTotal(Criteria cri);
 	
 	
 	
