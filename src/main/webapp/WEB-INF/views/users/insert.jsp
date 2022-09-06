@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <style>
 	.id_not_exist{
@@ -50,6 +56,21 @@
 우편번호 : <input class="USER_POST" name="USER_POST" readonly="readonly"><br/>
 주소:<input class="USER_ADDR1" name="USER_ADDR1" readonly="readonly"><br/>
 상세 주소:<input class="USER_ADDR2" name="USER_ADDR2" readonly="readonly"><br/>
+
+<div class="form_section">
+<div class="form_section_title">
+<label>상품 이미지</label>
+</div>
+<div class="form_section_content">
+<!-- 여러개 업로드(multiple) -->
+<!--<input type="file" multiple id="fileItem" name="uploadFile" style="height: 30px">  -->
+<!-- input 태그를 통해 선택된 파일은 file 객체의 형태로 표현. 이 객체는 filelist객체의 요소로 저장 
+	 이 파일에 -->
+<!-- 하나 업로드 -->
+<input type="file" id="fileItem" name="uploadFile" style="height: 30px">
+</div>
+</div>
+
 <input type="submit">
 
 </form>
