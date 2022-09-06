@@ -35,8 +35,17 @@
        		>
        
           </div>
-    <button data-oper='modify' class="" onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>       
+    <button data-oper='modify' class="" onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>   
+ 
 	<button data-oper='list' class="" onclick="location.href='/qna/list'">리스트</button>
+ <form id='operForm' action="/qna/modify" method="get">
+	<input type='hidden' id='qno' name='qno' value='<c:out value="${board.qno}"/>'>
+	<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'>
+	<input type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
+	<input type='hidden' name='keyword' value='<c:out value="${cri.keyword}"/>'>
+	<input type='hidden' name='type' value='<c:out value="${cri.type}"/>'>
+</form>    
+
        
 
 

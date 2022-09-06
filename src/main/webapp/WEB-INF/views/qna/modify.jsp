@@ -9,6 +9,9 @@
 <body>
 		
 		<form role="form" action="/qna/modify" method="post">
+		
+	  
+		
 		<div class="form-group">
           <label>NO.</label> <input class="form-control" name='qno'
              value="${board.qno}" readonly="readonly">
@@ -65,6 +68,27 @@
 							// 변경합니다. '/board/list'로의 이동은 아무런 파라미터가 없기 때문에
 							// form 태그의 모든 내용은 삭제한 상태에서 submit()을 진행합니다.			
 						   formObj.attr("action", "/qna/list").attr("method", "get");
+						
+						   var pageNumTag = $("input[name='pageNum']").clone();
+							var amountTag = $("input[name='amount']").clone();			
+						    // Page 321 자바스크립트 소스 추가 끝
+						    
+						    // Page 347 자바스크립트 소스 추가 시작
+						    var keywordTag = $("input[name='keyword']").clone();
+						    var typeTag = $("input[name='type']").clone();
+						    // Page 347 자바스크립트 소스 추가 끝
+						    
+						    formObj.empty();	
+						    
+						    // Page 321 자바스크립트 소스 추가 시작
+						    formObj.append(pageNumTag);
+						    formObj.append(amountTag);
+						    // Page 321 자바스크립트 소스 추가 끝
+						    
+						    // Page 347 자바스크립트 소스 추가 시작
+						    formObj.append(keywordTag);
+						    formObj.append(typeTag);
+							
 						}
 						formObj.submit();		
 					});
