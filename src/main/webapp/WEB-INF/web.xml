@@ -43,12 +43,34 @@
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		
+			<!-- multipart/form-data타입의 데이터를 주고 받을때의 설정을 위한 태그   -->
+			<!--아래 설정은 WAS에 대한 설정이라 스프링에서 해당 데이터를 처리할 수 없음
+				 스프링에서 데이터를 처리하기 위해MultipartResolver를 bean으로 등록해줘야댐 -->
+			<multipart-config>
+			<location>C:\\upload\\temp</location>
+			<!--업로드 가능한 최대 파일 크기  -->		
+			<max-file-size>20971520</max-file-size>					<!-- 1MB * 20 -->
+			<!-- 업로드 되는 파일의 최대 크기 -->
+			<max-request-size>41943040</max-request-size>			<!-- 40MB -->
+			<!-- 임시 파일로 저장 여부를 결정할 데이터 크기/ -->
+			<file-size-threshold>20971520</file-size-threshold>		<!-- 20MB -->
+	</multipart-config>
+		
 	</servlet>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+
+
+
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
 	
 
 	
