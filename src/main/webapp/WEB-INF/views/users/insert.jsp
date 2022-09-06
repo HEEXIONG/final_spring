@@ -68,6 +68,13 @@
 	 이 파일객체에 접근하기 위해  input  태그의 file속성에 접근. 스크립트 사용 -->
 <!-- 하나 업로드 -->
 <input type="file" id="fileItem" name="uploadFile" style="height: 30px">
+ <div id="uploadResult">
+ <!-- 
+ <div id="result_card">
+ <div class="imgDeletBtn">x</div>
+ <img src="/users/display?fileName=test.png">
+ </div>-->
+ </div>
 </div>
 </div>
 
@@ -85,6 +92,10 @@
 
 $("input[type='file']").on("change",function(e){ //input태그의 파일타입이 무언가 바꼈을때
 	
+	if($(".imgDeleteBtn").length > 0){
+		deleteFile();
+	}
+	
 	//첨부파일을 서버로 전송하기 위해 formdata 객체 사용(화면의 이동 없이 첨부파일을 서버로 전송하기 위해)
 	//formdata 객체를 생성하고 객체안에 첨부파일을 넣어 formdata객체 자체를 서버로 전송
 	let formData = new FormData();//formdata객체생성
@@ -96,14 +107,11 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 	console.log("file 객체 접근:" + fileObj )
 	
 	//파일 인터페이스가 가진속성을 이용해 확인(name,size,type)
-	console.log("파일이름"+ fileObj.name);
-	console.log("파일사이즈"+ fileObj.size);
-	console.log("파일타입"+ fileObj.type);
 	//파일체크(타입,사이즈)
-	if(!fileCheck(fileObj.name, fileObj.size)){
+/* 	if(!fileCheck(fileObj.name, fileObj.size)){
 		return false;
-	}
-	alert("알맞은 이미지 입니다.")
+	} */
+	
 	//한개의 파일을 업로드할 경우
 	//FormData.append(key, value) //서버로 첨부파일을 전송하기 위해 사용 
 	formData.append("uploadFile",fileObj)//fileObj=filelist안의 파일객체
@@ -119,13 +127,19 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 		contentType : false, //서버로 전송되는 데이터의 contentType
 		data : formData, // form데이터 객체를 보냄
 		type : 'POST', //서버 요청 타입
-		dataType: 'json' // 서버로부터 반환받을 데이터 타입
-		
+		dataType: 'json', // 서버로부터 반환받을 데이터 타입
+		success : function(result){
+			console.log(result)
+			showUploadImage(result)
+		},
+		error : function(result){
+			alert("이미지 파일이 아닙니다.")
+		}
 	});
 	
 })
-
-	let regex = new RegExp("(.*?)\.(jpg|png|gif|svg|ico)$");//정규 파일 체크(모든이름.jpg|png|gif|svg|ico)
+	//gif|svg|ico 나중에 추가
+	let regex = new RegExp("(.*?)\.(jpg|png)$");//정규 파일 체크(모든이름.jpg|png|gif|svg|ico)
 	let maxSize = 1048576; //1MB
 	
 	//이미지 파일 타입체크,용량체크 펑션
@@ -140,10 +154,55 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 	}
 	return true;
 }
+	//이미지 출력
+	function showUploadImage(uploadResultArr){
+		//데이터검증
+		if(!uploadResultArr || uploadResultArr.length ==0){
+			return
+		}
+		let uploadResult = $("#uploadResult");
+		//받은데이터의 첫번째 데이터
+		let obj = uploadResultArr[0];
+		
+		let str = "";
+		
+		let fileCallPath =  "s_"+obj.fileName;
+		
+		str += "<div id='result_card'>";
+		str += "<img src='/users/display?fileName=" + fileCallPath +"'>";
+		str += "<div class='imgDeleteBtn' data-file='"+fileCallPath+"'>x</div>";
+		str += "<input type='hidden' name='imageList[0].fileName' value='"+ obj.fileName +"'>";
+		str += "<input type='hidden' name='imageList[0].uuid' value='"+ obj.uuid +"'>";
+		str += "<input type='hidden' name='imageList[0].uploadPath' value='"+ obj.uploadPath +"'>";
+		str += "</div>";
+		
+		uploadResult.append(str);
+	}
+	
+	$("#uploadResult").on("click",".imgDeleteBtn",function(e){
+		deleteFile();
+	});
 	
 	
-	
-	
+	function deleteFile(){
+		let targetFile = $(".imgDeleteBtn").data("file");
+		let targetDiv = $("#result_card");
+		$.ajax({
+			url : '/users/deleteFile',
+			data : {fileName : targetFile },
+			dataType : 'text',
+			type: 'post',
+			success : function(result){
+				console.log(result)
+				targetDiv.remove();
+				$("input[type='file']").val("");
+			},
+			error : function(result){
+				console.log(result);
+				alert("파일을 삭제하지 못하였습니다.")
+			}
+		});
+	}
 	
 	
 	

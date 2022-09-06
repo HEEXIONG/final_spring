@@ -7,9 +7,16 @@
 
 
 <insert id="userInsert">
-
+<selectKey keyProperty="USER_NO" order="BEFORE"
+			resultType="long">
+			select user_seq.nextval from dual
+  </selectKey>
 insert into users (USER_NO,USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,USER_POST,USER_ADDR1,USER_ADDR2) 
-VALUES(user_seq.nextval,#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},#{USER_ADDR1},#{USER_ADDR2})
+VALUES(#{USER_NO},#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},#{USER_ADDR1},#{USER_ADDR2})
+</insert>
+
+<insert id="imageInsert">
+insert into user_profile(USER_NO,fileName,uploadPath,uuid) VALUES(#{USER_NO},#{fileName},#{uploadPath},#{uuid})
 </insert>
 
 <select id="idCheck" resultType="int">

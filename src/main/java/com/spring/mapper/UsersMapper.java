@@ -1,5 +1,6 @@
 package com.spring.mapper;
 
+import com.spring.domain.AttachImageVO;
 import com.spring.domain.UsersVO;
 
 public interface UsersMapper {
@@ -9,6 +10,8 @@ public interface UsersMapper {
 	public int idCheck(String USER_ID);
 	//닉네임 중복 검사
 	public int nickCheck(String USER_NICKNAME);
+	
+	public void imageInsert(AttachImageVO vo);
 	
 	
 	

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.spring.domain.AttachImageVO;
 import com.spring.domain.UsersVO;
 
 import lombok.extern.log4j.Log4j;
@@ -40,6 +41,16 @@ public class UsersMapperTest {
 		mapper.idCheck(id2);
 		
 		
+	}
+	@Test
+	public void imagetest() {
+		AttachImageVO vo = new AttachImageVO();
+		
+		vo.setUSER_NO(27L);
+		vo.setFileName("test1");
+		vo.setUploadPath("test1");
+		vo.setUuid("test1");
+		mapper.imageInsert(vo);
 	}
 
 }

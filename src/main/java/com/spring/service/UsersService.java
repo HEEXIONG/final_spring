@@ -6,6 +6,10 @@ public interface UsersService {
 	//회원 등록
 	public void userInsert(UsersVO vo);
 	
+	
+	
+	
+	
 	//아이디 중복 검사
 	public int idCheck(String USER_ID);
 	//닉네임 중복 검사

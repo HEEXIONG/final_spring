@@ -48,7 +48,7 @@
 			<!--아래 설정은 WAS에 대한 설정이라 스프링에서 해당 데이터를 처리할 수 없음
 				 스프링에서 데이터를 처리하기 위해MultipartResolver를 bean으로 등록해줘야댐 -->
 			<multipart-config>
-			<location>C:\\upload\\temp</location>
+			<location>C:\\</location>
 			<!--업로드 가능한 최대 파일 크기  -->		
 			<max-file-size>20971520</max-file-size>					<!-- 1MB * 20 -->
 			<!-- 업로드 되는 파일의 최대 크기 -->
