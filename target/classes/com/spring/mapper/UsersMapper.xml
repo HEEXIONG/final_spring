@@ -15,6 +15,10 @@ insert into users (USER_NO,USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,U
 VALUES(#{USER_NO},#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},#{USER_ADDR1},#{USER_ADDR2})
 </insert>
 
+<select id="userLogin" resultType="com.spring.domain.UsersVO">
+select * from users where USER_ID =#{USER_ID} and USER_PW=#{USER_PW}
+</select>
+
 <insert id="imageInsert">
 insert into user_profile(USER_NO,fileName,uploadPath,uuid) VALUES(#{USER_NO},#{fileName},#{uploadPath},#{uuid})
 </insert>

@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,6 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.AttachImageVO;
 import com.spring.domain.UsersVO;
@@ -46,7 +49,30 @@ public class UsersController {
 	UsersService userserivce;
 	
 	
-	
+	@GetMapping("/login")
+	public void login() {
+		log.info("로그인페이지입니다");
+		
+	}
+	@PostMapping("/login")
+	public String loginpost(HttpServletRequest request, UsersVO user, RedirectAttributes rttr) {
+		log.info("post로그인페이지입니다");
+		
+		HttpSession session = request.getSession();
+		UsersVO vo = userserivce.userLogin(user);
+		
+			if(vo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
+            
+            int result = 0;
+            rttr.addFlashAttribute("result", result);
+            return "redirect:/users/login";
+            
+        }
+        
+        session.setAttribute("user", vo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
+        
+        return "redirect:/";
+	}
 	
 	
 	

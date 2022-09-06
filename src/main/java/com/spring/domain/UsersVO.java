@@ -16,6 +16,7 @@ public class UsersVO {
 	private String USER_POST;
 	private String USER_ADDR1;
 	private String USER_ADDR2;
+	private String USER_AUTH;
 	
 	private List<AttachImageVO> imageList;
 	

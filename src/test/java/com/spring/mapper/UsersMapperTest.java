@@ -52,5 +52,18 @@ public class UsersMapperTest {
 		vo.setUuid("test1");
 		mapper.imageInsert(vo);
 	}
+	@Test
+	public void login() {
+		UsersVO vo = new UsersVO();
+		
+		//vo.setUSER_ID("test1");
+		//vo.setUSER_PW("test1");
+		
+		//잘못된 
+		vo.setUSER_ID("test12");
+		vo.setUSER_PW("test12");
+		mapper.userLogin(vo);
+		System.out.println("결과 : "+mapper.userLogin(vo));
+	}
 
 }

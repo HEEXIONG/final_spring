@@ -3,6 +3,8 @@ package com.spring.service;
 import com.spring.domain.UsersVO;
 
 public interface UsersService {
+	//로그인
+	public UsersVO userLogin(UsersVO vo);
 	//회원 등록
 	public void userInsert(UsersVO vo);
 	

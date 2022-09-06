@@ -28,7 +28,12 @@
 </form>
 <form action="/users/insert">
 <div class="login_button_wrap">
-<input type="submit" class="login_button" value="유저로그인">
+<input type="submit"  value="회원가입">
+</div>	
+</form>
+<form action="/users/login">
+<div class="login_button_wrap">
+<input type="submit"  value="로그인">
 </div>	
 </form>
 <div align="center">
