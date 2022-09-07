@@ -11,13 +11,26 @@ public class UsersServiceImpl implements UsersService {
 	@Autowired
 	UsersMapper mapper;
 	
+	@Override
+	public UsersVO userLogin(UsersVO vo) {
+		return mapper.userLogin(vo);
+	}
 
 	@Override
 	public void userInsert(UsersVO vo) {
 		mapper.userInsert(vo);
 		
+		vo.getImageList().forEach(attach ->{
+			attach.setUSER_NO(vo.getUSER_NO());
+			mapper.imageInsert(attach);
+		});
+		
 	}
 
+	
+	
+	
+	
 	@Override
 	public int idCheck(String USER_ID) {
 		return mapper.idCheck(USER_ID);
@@ -27,5 +40,11 @@ public class UsersServiceImpl implements UsersService {
 	public int nickCheck(String USER_NICKNAME) {
 		return mapper.nickCheck(USER_NICKNAME);
 	}
+
+
+
+
+
+
 
 }
