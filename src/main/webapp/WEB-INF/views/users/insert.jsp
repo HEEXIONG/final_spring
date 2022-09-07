@@ -34,8 +34,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/users/insert" method="post">
-
+<form action="/users/insert" method="post" enctype="multipart/form-data">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
 아이디:<input class="USER_ID" name="USER_ID"><br/>
 <span class="id_not_exist">사용 가능한 아이디입니다</span>
@@ -123,9 +123,14 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 	
 	$.ajax({
 		url : '/users/uploadAjaxAction',
+		enctype:'multipart/form-data',
 		processData : false, //서버에 쿼리스트링으로  데이터 전달할지
 		contentType : false, //서버로 전송되는 데이터의 contentType
 		data : formData, // form데이터 객체를 보냄
+		beforeSend : function(xhr)
+        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+        },
 		type : 'POST', //서버 요청 타입
 		dataType: 'json', // 서버로부터 반환받을 데이터 타입
 		success : function(result){
@@ -274,6 +279,10 @@ $(".USER_ID").on("propertychange change keyup paste input",function(){
 	$.ajax({
 		type :"post",
 		url : "/users/userIdChk",
+		beforeSend : function(xhr)
+        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+        },
 		data : data,
 		success : function(result){
 			//console.log("성공 여부" + result);
@@ -293,6 +302,10 @@ $(".USER_NICKNAME").on("propertychange change keyup paste input",function(){
 	var data = {usernick:usernick} //'컨트롤에 넘길 데이터 이름 : 실제 데이터'
 	$.ajax({
 		type :"post",
+		beforeSend : function(xhr)
+        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+        },
 		url : "/users/usernickChk",
 		data : data,
 		success : function(result){
