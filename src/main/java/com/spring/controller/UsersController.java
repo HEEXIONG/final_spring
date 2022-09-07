@@ -52,48 +52,6 @@ public class UsersController {
 	@Autowired
 	private BCryptPasswordEncoder pwEncoder;
 	
-	//로그인페이지(get)
-	@GetMapping("/login")
-	public void login() {
-		log.info("로그인페이지입니다");
-		
-	}
-	//로그인페이지(post)
-	@PostMapping("/login")
-	public String loginpost(HttpServletRequest request, UsersVO user, RedirectAttributes rttr) {
-		log.info("post로그인페이지입니다");
-		
-		HttpSession session = request.getSession();
-		String originPw = "";
-		String bcryptPw = "";
-		
-		UsersVO vo = userserivce.userLogin(user);
-		if(vo !=null) {//일치하는 아이디 존재시
-			originPw = user.getUSER_PW();
-			bcryptPw = vo.getUSER_PW();
-			if(pwEncoder.matches(originPw, bcryptPw) == true) {//비밀번호까지 같을때
-				vo.setUSER_PW("");
-				session.setAttribute("user", vo);
-				return "redirect:/";
-			}else {
-				rttr.addFlashAttribute("result",0); //실패내용을 뷰에 전달
-				return "redircet:/users/login";
-			}
-		}else { //일치하는 아이디가 존재하지 않을시
-			rttr.addFlashAttribute("result",0); //실패내용을 뷰에 전달
-			return "redircet:/users/login";
-		}
-	}
-	//로그아웃
-	@GetMapping("/logout")
-	public String logoutget(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		//세션 초기화
-		session.invalidate();
-		
-		return "redirect:/";
-		
-	}
 	
 	
 	

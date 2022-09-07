@@ -29,7 +29,7 @@
 		<div class="top_gnb_area">
 		 <ul class="list">
 		 <c:if test="${user == null}">
-                <li ><a href="/users/login">로그인</a></li>
+                <li ><a href="/customLogin">로그인</a></li>
                 <li><a href="/users/insert">회원가입</a></li>
                 <li> 고객센터</li>
                 </c:if>

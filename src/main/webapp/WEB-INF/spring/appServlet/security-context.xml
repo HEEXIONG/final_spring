@@ -6,7 +6,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- 스프링 시큐리티가 동작하기 위해선 authentication-manager라는 존재와 시작지점이 필요하기 때문에 아래와 같은 설정 필요 -->
 	<bean id="customAccessDenied" class="com.spring.security.CustomAccessDeniedHandler"></bean>
-		<bean id="customLoginSuccess" class="com.spring.security.CustomLoginSuccessHandler"></bean>
+	<bean id="customLoginSuccess" class="com.spring.security.CustomLoginSuccessHandler"></bean>
+	<bean id="customPasswordEncoder" class="com.spring.security.CustomPasswordEncoder"></bean>
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	<security:http auto-config="true" use-expressions="true">
 	
 	<security:intercept-url pattern="/test/all" access="permitAll"/>
@@ -26,10 +28,13 @@
 	
 	<security:authentication-manager>
 	<security:authentication-provider>
+	<!-- <security:jdbc-user-service data-source-ref="dataSource"/> -->
 	<security:jdbc-user-service data-source-ref="dataSource"/>
-	<security:user-service>
+	<security:password-encoder ref="bcryptPasswordEncoder"/>
+	
+	<!-- <security:user-service>
 	<security:user name="user" password="{noop}user" authorities="ROLE_USER"/>
-	</security:user-service>
+	</security:user-service> -->
 	</security:authentication-provider>
 	
 	</security:authentication-manager>
@@ -40,5 +45,5 @@
 	
 	
 	
-<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
 </beans>
