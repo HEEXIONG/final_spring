@@ -22,6 +22,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,32 +49,51 @@ public class UsersController {
 	@Autowired
 	UsersService userserivce;
 	
+	@Autowired
+	private BCryptPasswordEncoder pwEncoder;
 	
+	//로그인페이지(get)
 	@GetMapping("/login")
 	public void login() {
 		log.info("로그인페이지입니다");
 		
 	}
+	//로그인페이지(post)
 	@PostMapping("/login")
 	public String loginpost(HttpServletRequest request, UsersVO user, RedirectAttributes rttr) {
 		log.info("post로그인페이지입니다");
 		
 		HttpSession session = request.getSession();
-		UsersVO vo = userserivce.userLogin(user);
+		String originPw = "";
+		String bcryptPw = "";
 		
-			if(vo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
-            
-            int result = 0;
-            rttr.addFlashAttribute("result", result);
-            return "redirect:/users/login";
-            
-        }
-        
-        session.setAttribute("user", vo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-        
-        return "redirect:/";
+		UsersVO vo = userserivce.userLogin(user);
+		if(vo !=null) {//일치하는 아이디 존재시
+			originPw = user.getUSER_PW();
+			bcryptPw = vo.getUSER_PW();
+			if(pwEncoder.matches(originPw, bcryptPw) == true) {//비밀번호까지 같을때
+				vo.setUSER_PW("");
+				session.setAttribute("user", vo);
+				return "redirect:/";
+			}else {
+				rttr.addFlashAttribute("result",0); //실패내용을 뷰에 전달
+				return "redircet:/users/login";
+			}
+		}else { //일치하는 아이디가 존재하지 않을시
+			rttr.addFlashAttribute("result",0); //실패내용을 뷰에 전달
+			return "redircet:/users/login";
+		}
 	}
-	
+	//로그아웃
+	@GetMapping("/logout")
+	public String logoutget(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		//세션 초기화
+		session.invalidate();
+		
+		return "redirect:/";
+		
+	}
 	
 	
 	
@@ -92,6 +112,14 @@ public class UsersController {
 	//회원가입페이지(post)
 	@PostMapping("/insert")
 	public String insertpost(UsersVO uservo) {
+		String originPw = "";
+		String bcryptPw = "";
+		
+		originPw = uservo.getUSER_PW();
+		bcryptPw = pwEncoder.encode(originPw);
+		uservo.setUSER_PW(bcryptPw);
+		
+		
 		log.info("유저정보"+uservo);
 		userserivce.userInsert(uservo);
 		//log.warn("회원가입 완료");

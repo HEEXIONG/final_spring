@@ -19,11 +19,13 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public void userInsert(UsersVO vo) {
 		mapper.userInsert(vo);
-		
+		if(vo.getImageList() != null) {
 		vo.getImageList().forEach(attach ->{
 			attach.setUSER_NO(vo.getUSER_NO());
 			mapper.imageInsert(attach);
 		});
+		}else{
+		}
 		
 	}
 

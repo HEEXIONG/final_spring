@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 스프링 시큐리티가 동작하기 위해선 authentication-manager라는 존재와 시작지점이 필요하기 때문에 아래와 같은 설정 필요 -->
+	<security:http>
+	
+	<security:intercept-url pattern="/test/all" access="permitAll"/>
+	<security:intercept-url pattern="/test/member" access="hasRole('user')"/>	
+	
+	<security:form-login/>
+	</security:http>
+	
+	
+	
+	<security:authentication-manager>
+	<security:authentication-provider>
+	<security:user-service>
+	<security:user name="user" password="user" authorities="user"/>
+	</security:user-service>
+	</security:authentication-provider>
+	
+	</security:authentication-manager>
+	<!-- ============================================================================================== -->
+	
+	
+	
+	
+	
+	
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+</beans>

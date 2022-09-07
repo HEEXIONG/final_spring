@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+.login_warn{
+margin-bottom : 10px;
+text-align: left;
+color: red;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -26,6 +35,9 @@
 					PW<input class="pw_iput" name="USER_PW">
 				</div>
 			</div>
+			<c:if test="${result == 0}">
+			<div class="login_warn">ID또는PW를 잘못 입력 하셨습니다.</div>
+			</c:if>
 			<div class="login_button_wrap">
 				<input type="submit" class="login_button" value="로그인">
 			</div>			
