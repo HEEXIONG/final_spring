@@ -5,6 +5,12 @@
 
 <mapper namespace="com.spring.mapper.UsersMapper">
 
+<select id="read" resultType="com.spring.domain.UsersVO">
+select USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,USER_REGDATE,USER_POST,USER_ADDR1,USER_ADDR2,USER_AUTH from users where USER_ID = #{USER_ID}
+</select>
+
+
+
 
 <insert id="userInsert">
 <selectKey keyProperty="USER_NO" order="BEFORE"
@@ -15,17 +21,8 @@ insert into users (USER_NO,USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,U
 VALUES(#{USER_NO},#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},#{USER_ADDR1},#{USER_ADDR2})
 </insert>
 <insert id="imageInsert">
-
 insert into user_profile(USER_NO,fileName,uploadPath,uuid) VALUES(#{USER_NO},#{fileName},#{uploadPath},#{uuid})
 </insert>
-<!-- =============================================== -->
-<select id="userLogin" resultType="com.spring.domain.UsersVO">
-	select * from users where USER_ID =#{USER_ID}
-</select>
-<!-- =============================================== -->
-
-
-
 <select id="idCheck" resultType="int">
 select count(*) from users where USER_ID = #{USER_ID}
 </select>

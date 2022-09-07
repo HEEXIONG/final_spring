@@ -34,13 +34,13 @@ public class UsersMapperTest {
 	}
 	@Test
 	public void idchk() {
-		String id = "테스트4";
-		String id2 = "하이하이";
-		
-		mapper.idCheck(id);
-		mapper.idCheck(id2);
-		
-		
+		/*
+		 * String id = "테스트4"; String id2 = "하이하이";
+		 * 
+		 * mapper.idCheck(id); mapper.idCheck(id2);
+		 */
+		UsersVO vo = mapper.read("test1");
+		log.info(vo);
 	}
 	@Test
 	public void imagetest() {
@@ -52,18 +52,12 @@ public class UsersMapperTest {
 		vo.setUuid("test1");
 		mapper.imageInsert(vo);
 	}
+	
 	@Test
-	public void login() {
-		UsersVO vo = new UsersVO();
+	public void testRead() {
+		UsersVO vo = mapper.read("test1");
+		log.info(vo);
 		
-		//vo.setUSER_ID("test1");
-		//vo.setUSER_PW("test1");
-		
-		//잘못된 
-		vo.setUSER_ID("test12");
-		vo.setUSER_PW("test12");
-		mapper.userLogin(vo);
-		System.out.println("결과 : "+mapper.userLogin(vo));
 	}
 
 }
