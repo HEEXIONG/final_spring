@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.spring.mapper.LoginMapper"> 
+ <resultMap type="com.spring.domain.UsersVO" id="userMap">
+ <result property="USER_ID" column="USER_ID"/>
+ <result property="USER_PW" column="USER_PW"/>
+ <result property="USER_NICKNAME" column="USER_NICKNAME"/>
+ <result property="USER_PHONE" column="USER_PHONE"/>
+ <result property="USER_EMAIL" column="USER_EMAIL"/>
+ <result property="USER_REGDATE" column="USER_REGDATE"/>
+ <result property="USER_POST" column="USER_POST"/>
+ <result property="USER_ADDR1" column="USER_ADDR1"/>
+ <result property="USER_ADDR2" column="USER_ADDR2"/>
+ <result property="ENABLED" column="ENABLED"/>
+  <collection property="authList" resultMap="authMap"></collection>
+  <collection property="imageList" resultMap="imageMap"></collection>
+ </resultMap>
+ 
+  <resultMap type="com.spring.domain.AuthVO" id="authMap">
+    <result property="userid" column="userid"/>
+    <result property="auth" column="auth"/>
+  </resultMap>
+   <resultMap type="com.spring.domain.AttachImageVO" id="imageMap">
+    <result property="uploadPath" column="uploadPath"/>
+    <result property="uuid" column="uuid"/>
+    <result property="uuid" column="uuid"/>
+    <result property="fileName" column="fileName"/>
+    <result property="USER_NO" column="USER_NO"/>
+  </resultMap>
+  <select id="read" resultMap="userMap">
+	select mem.USER_NO, mem.USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,USER_REGDATE,USER_POST,USER_ADDR1,USER_ADDR2,ENABLED,auth
+from users mem LEFT OUTER join authorities auth on mem.USER_ID = auth.userid where mem.USER_ID = #{USER_ID}
+  </select>
+ 
+  </mapper>

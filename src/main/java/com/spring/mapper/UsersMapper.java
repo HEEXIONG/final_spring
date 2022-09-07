@@ -5,7 +5,7 @@ import com.spring.domain.UsersVO;
 
 public interface UsersMapper {
 	
-	public UsersVO read(String userid);
+	
 	
 	
 	//회원가입

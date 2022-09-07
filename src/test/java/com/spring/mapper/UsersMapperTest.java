@@ -17,6 +17,9 @@ public class UsersMapperTest {
 	
 	@Autowired
 	private UsersMapper mapper;
+	@Autowired
+	private LoginMapper Lmapper;
+	
 
 	@Test
 	public void inserttest() {
@@ -39,7 +42,7 @@ public class UsersMapperTest {
 		 * 
 		 * mapper.idCheck(id); mapper.idCheck(id2);
 		 */
-		UsersVO vo = mapper.read("test1");
+		UsersVO vo = Lmapper.read("test2");
 		log.info(vo);
 	}
 	@Test
@@ -53,11 +56,6 @@ public class UsersMapperTest {
 		mapper.imageInsert(vo);
 	}
 	
-	@Test
-	public void testRead() {
-		UsersVO vo = mapper.read("test1");
-		log.info(vo);
-		
-	}
+	
 
 }
