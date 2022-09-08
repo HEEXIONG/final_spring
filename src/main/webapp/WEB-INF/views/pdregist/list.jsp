@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-
-<link href="/resources/css/bootstrap.css" rel="stylesheet" /> 
-<link href="/resources/css/main.css" rel="stylesheet" />
+<link href="/resources/css/bootstrap.css" rel="stylesheet" />
 <style type="text/css">
 .login_button_wrap{
 	margin-top: 40px;
@@ -25,32 +22,16 @@
 	<title>Home</title>
 </head>
 <body>
-<div class="wrapper">
-	<div class="wrap">
-		<div class="top_gnb_area">
-		 <ul class="list">
-            <sec:authorize access="isAnonymous()">
-                <li ><a href="/customLogin">로그인</a></li>
-                <li><a href="/users/insert">회원가입</a></li>
-                <li> 고객센터</li>
- 		  </sec:authorize>          
-               
-          <sec:authorize access="isAuthenticated()">
-                <li > 회원 : <sec:authentication property="principal.user.USER_ID" /></li>
-                <li>  닉네임 :<sec:authentication property="principal.user.USER_NICKNAME" /></li>
-                <li><a href="/customLogout">로그아웃</a></li>
-                
- 		  </sec:authorize>          
-            </ul>  
-			<div class="clearfix"></div>			
-		</div>
-	</div>
-</div>
-<h1 style="text-align: center;">연습용 메인페이지입니다</h1>
+<h1>연습용 메인페이지입니다</h1>
 <form action="/qna/list">
 <div class="login_button_wrap">
 <input type="submit" value="Q&A게시판">
 </div>
+</form>
+<form action="/users/insert">
+<div class="login_button_wrap">
+<input type="submit" class="login_button" value="유저로그인">
+</div>	
 </form>
 <div align="center">
   <button class="btn btn-primary" type="button" onclick="location.href='/board/list'">공지사항 게시판</button>
@@ -80,7 +61,7 @@
         <c:forEach items="${list}" var="PdVo">
 	<tr>
         <td>${PdVo.pd_code}</td>
-        <td><a href='/read?pdcode=${PdVo.pd_code}'>${PdVo.pd_title}</a></td>
+        <td><a href='./read?pd_code=${PdVo.pd_code}'>${PdVo.pd_title}</a></td>
         <td>${PdVo.admin}</td>
         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 				value="${PdVo.regdate}" /></td>

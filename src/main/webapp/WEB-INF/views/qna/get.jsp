@@ -51,14 +51,5 @@
 	<input type='hidden' name='keyword' value='<c:out value="${cri.keyword}"/>'>
 	<input type='hidden' name='type' value='<c:out value="${cri.type}"/>'>
 </form>    
-
-       
-
-
-
-
-
-
-
 </body>
 </html>

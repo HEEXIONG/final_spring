@@ -30,7 +30,6 @@ public class QnaServiceImpl implements QnaService{
 	@Override
 	public QnaVO get(Long qno) {
 		log.info("글 조회" + qno);
-		
 		return mapper.read(qno);
 	}
 
@@ -65,19 +64,6 @@ public class QnaServiceImpl implements QnaService{
 		
 		return mapper.getTotalCount(cri);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

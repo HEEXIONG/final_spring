@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.PdMapper">
+
+<select id="read" resultType="com.spring.domain.PdVo">
+select pd_code,pd_title,admin,pd_content,regdate,price from pd_regist where pd_code = #{pd_code}
+</select>
+
+<select id="getList" resultType="com.spring.domain.PdVo">
+<![CDATA[
+select
+ pd_code,pd_title,admin,pd_content,regdate,price
+from
+ pd_regist
+where pd_code > 0
+order by pd_code desc, regdate desc
+]]>
+</select>
+</mapper>
+

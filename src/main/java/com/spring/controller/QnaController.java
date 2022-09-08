@@ -60,8 +60,6 @@ public class QnaController {
 	public void register() {
 	}
 	
-	
-	
 	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("qno") Long qno,@ModelAttribute("cri") Criteria cri ,Model model) {
 		log.info("/get or modify");
@@ -98,16 +96,5 @@ public class QnaController {
 	
 		return "redirect:/qna/list";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
