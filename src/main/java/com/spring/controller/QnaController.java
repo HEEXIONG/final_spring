@@ -1,5 +1,7 @@
 package com.spring.controller;
 
+import java.util.List;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.domain.Criteria;
 import com.spring.domain.PageDTO;
 import com.spring.domain.QnaVO;
+import com.spring.domain.ReplyVO;
 import com.spring.service.QnaService;
+import com.spring.service.ReplyService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -25,6 +29,8 @@ import lombok.extern.log4j.Log4j;
 public class QnaController {
 
 	private QnaService service;
+	
+	private ReplyService replyService;
 	
 //	@GetMapping("/list")
 //	public void list(Model model) {
@@ -64,7 +70,12 @@ public class QnaController {
 	public void get(@RequestParam("qno") Long qno,@ModelAttribute("cri") Criteria cri ,Model model) {
 		log.info("/get or modify");
 		model.addAttribute("board", service.get(qno));
-	}
+		
+		List<ReplyVO> replyList = replyService.getList(cri, qno);
+		model.addAttribute("replyList", replyList);
+		
+		
+	}	
 	
 	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/modify")

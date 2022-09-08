@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.ReplyMapper">
+
+	<insert id="insert">
+		insert into tbl_reply(rno, qno, reply, replyer)
+		values(seq_reply.nextval, #{qno}, #{reply}, #{replyer})	
+	</insert>
+	
+	<select id="read" resultType="com.spring.domain.ReplyVO">
+		select * from tbl_reply where rno = #{rno}
+	</select>
+	
+	<delete id="delete">
+		delete from tbl_reply where rno = #{rno}	
+	</delete>
+	
+	<update id="update">
+		update tbl_reply set reply = #{reply}, updatedate = sysdate where rno = #{rno}		
+	</update>
+	
+
+	<select id="getListWithPaging" resultType="com.spring.domain.ReplyVO">
+	<![CDATA[
+	select rno, qno, reply, replyer, replydate, updatedate
+    from
+	   (
+		select /*+ INDEX(tbl_reply idx_reply) */
+		rownum rn, rno, qno, reply, replyer, replyDate, updatedate
+	from tbl_reply
+	where qno = #{qno}
+		and rno > 0
+		and rownum <= #{cri.pageNum} * #{cri.amount}
+	) where rn > (#{cri.pageNum} -1) * #{cri.amount}
+	]]>	
+	
+	</select>
+	
+	<!-- Page 433 ReplyMapper xml 파일에 id 속성값이 getCountByBno인
+	     select 태그를 추가합니다. -->
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+			select count(rno) from tbl_reply where qno = #{qno}
+		]]>		
+	</select>
+	
+	
+	
+	
+
+</mapper>
