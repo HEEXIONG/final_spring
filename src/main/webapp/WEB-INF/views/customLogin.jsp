@@ -21,6 +21,7 @@
 <div>
 <input type="password" name="password" value="user">
 </div>
+<input type="checkbox" name="remember-me">Remember Me
 <div>
 <input type="submit">
 </div>

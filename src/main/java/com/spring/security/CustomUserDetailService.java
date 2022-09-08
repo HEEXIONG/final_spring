@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.spring.domain.UsersVO;
 import com.spring.mapper.LoginMapper;
 import com.spring.mapper.UsersMapper;
-import com.spring.service.domain.CustomUser;
+import com.spring.security.domain.CustomUser;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;

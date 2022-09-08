@@ -18,10 +18,11 @@
 	<!-- <security:form-login/> 로그인 폼 제공-->
 		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" />
 		
-		<security:logout logout-url="/customLogout" invalidate-session="true"/>
+		<security:logout logout-url="/customLogout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID"/>
 	
 	<!-- <security:access-denied-handler error-page="/accessError"/> -->
 	<security:access-denied-handler ref="customAccessDenied"/><!--bean id =customAccessDenied  -->
+	<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
 	
 	</security:http>
 	

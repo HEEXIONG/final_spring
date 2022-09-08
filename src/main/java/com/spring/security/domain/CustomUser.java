@@ -1,4 +1,4 @@
-package com.spring.service.domain;
+package com.spring.security.domain;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
