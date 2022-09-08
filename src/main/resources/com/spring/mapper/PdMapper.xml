@@ -5,14 +5,10 @@
 <mapper namespace="com.spring.mapper.PdMapper">
 
 <select id="read" resultType="com.spring.domain.PdVo">
-select
- pd_code,pd_title,admin,pd_content,regdate,price
-from
- pd_regist
-where pd_code = #{pd_code}
+select pd_code,pd_title,admin,pd_content,regdate,price from pd_regist where pd_code = #{pd_code}
 </select>
 
-<select id="ListAll" resultType="com.spring.domain.PdVo">
+<select id="getList" resultType="com.spring.domain.PdVo">
 <![CDATA[
 select
  pd_code,pd_title,admin,pd_content,regdate,price
@@ -23,3 +19,4 @@ order by pd_code desc, regdate desc
 ]]>
 </select>
 </mapper>
+

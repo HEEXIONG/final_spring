@@ -60,8 +60,8 @@
 
         <c:forEach items="${list}" var="PdVo">
 	<tr>
-        <td>${PdVo.pdcode}</td>
-        <td><a href='/read?pdcode=${PdVo.pdcode}'>${PdVo.title}</a></td>
+        <td>${PdVo.pd_code}</td>
+        <td><a href='/read?pdcode=${PdVo.pd_code}'>${PdVo.pd_title}</a></td>
         <td>${PdVo.admin}</td>
         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 				value="${PdVo.regdate}" /></td>

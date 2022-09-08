@@ -7,7 +7,7 @@ import com.spring.domain.PdVo;
 public interface PdMapper {
 	
 		public List<PdVo> getList();
-	
+		
 		public PdVo read(Long pd_code);
 
 }
