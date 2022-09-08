@@ -9,7 +9,7 @@
 <body>
 		
 		<form role="form" action="/qna/modify" method="post">
-		
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
 	  
 		
 		<div class="form-group">

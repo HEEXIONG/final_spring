@@ -27,7 +27,9 @@
 </div>
 <div>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+<a href="/">메인으로</a>
 </div>
+
 
 
 </form>

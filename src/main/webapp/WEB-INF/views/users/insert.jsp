@@ -128,7 +128,7 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 		contentType : false, //서버로 전송되는 데이터의 contentType
 		data : formData, // form데이터 객체를 보냄
 		beforeSend : function(xhr)
-        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+        {   
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
         },
 		type : 'POST', //서버 요청 타입

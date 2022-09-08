@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class QnaController {
 //		System.out.println("리스트");
 //	}
 	
+	
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		log.info("list" + cri);
@@ -43,7 +45,7 @@ public class QnaController {
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
 		
 	}
-	
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/register")
 	public String register(QnaVO board, RedirectAttributes rttr) {
 		log.info("글 등록 : " + board);
@@ -53,7 +55,7 @@ public class QnaController {
 		return "redirect:/qna/list";
 		
 	}
-	
+	@PreAuthorize("isAuthenticated()")
 	@GetMapping("/register")
 	public void register() {
 	}
@@ -66,7 +68,7 @@ public class QnaController {
 		model.addAttribute("board", service.get(qno));
 	}
 	
-	
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/modify")
 	public String modify(QnaVO board, @ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr) {
 		log.info("글 수정 : " + board);
@@ -81,7 +83,7 @@ public class QnaController {
 		return "redirect:/qna/list";
 		
 	}
-	
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/remove")
 	public String remove(@RequestParam("qno") Long qno,@ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr) {
 		log.warn("삭제 매서드 입니다.");

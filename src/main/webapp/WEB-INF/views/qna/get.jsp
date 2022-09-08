@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>    
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
     
 <!DOCTYPE html>
 <html>
@@ -35,8 +36,13 @@
        		>
        
           </div>
+          <sec:authentication property="principal" var ="userinfo"/>
+          <sec:authorize access="isAuthenticated()">
+          
+          <c:if test="${userinfo.user.USER_NICKNAME eq board.q_writer }">
     <button data-oper='modify' class="" onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>   
- 
+ </c:if>
+ </sec:authorize>
 	<button data-oper='list' class="" onclick="location.href='/qna/list'">리스트</button>
  <form id='operForm' action="/qna/modify" method="get">
 	<input type='hidden' id='qno' name='qno' value='<c:out value="${board.qno}"/>'>
