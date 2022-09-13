@@ -16,8 +16,11 @@
 			select user_seq.nextval from dual
   </selectKey>
 insert all 
-into users (USER_NO,USER_ID,USER_PW,USER_NICKNAME,USER_PHONE,USER_EMAIL,USER_POST,USER_ADDR1,USER_ADDR2) 
-VALUES(#{USER_NO},#{USER_ID},#{USER_PW},#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},#{USER_ADDR1},#{USER_ADDR2})
+into users (USER_NO,USER_ID,USER_PW,USER_NICKNAME,USER_PHONE
+,USER_EMAIL,USER_POST,USER_ADDR1,USER_ADDR2) 
+VALUES(#{USER_NO},#{USER_ID},#{USER_PW},
+#{USER_NICKNAME},#{USER_PHONE},#{USER_EMAIL},#{USER_POST},
+#{USER_ADDR1},#{USER_ADDR2})
 into authorities(userid) values(#{USER_ID})select * from dual
 </insert>
 <insert id="imageInsert">

@@ -51,13 +51,6 @@ public class UsersController {
 	
 	@Autowired
 	private BCryptPasswordEncoder pwEncoder;
-	
-	
-	
-	
-	
-	
-	
 	//===============================================================
 
 
@@ -70,6 +63,9 @@ public class UsersController {
 	//회원가입페이지(post)
 	@PostMapping("/insert")
 	public String insertpost(UsersVO uservo) {
+		
+		
+		
 		String originPw = "";
 		String bcryptPw = "";
 		
@@ -196,24 +192,7 @@ public class UsersController {
 			log.info("파일을 저장했습니다.");
 			//썸네일 저장파일 이름
 			File thumbnailFile = new File(uploadPath,"s_"+uploadFileName);
-			/*1번 방법
-			//ImageIO의 read메서드를 사용해서 savefile 읽어와서 BufferedImage 의 변수에 대입
-			BufferedImage bo_image = ImageIO.read(savefile);
-			//비율
-			double ratio = 3;
-			//넓이 설정
-			int width = (int)(bo_image.getWidth()/ratio);
-			//높이 설정
-			int height = (int)(bo_image.getHeight()/ratio);
-			//일종의 크기를 지정하여 흰색 도화지를 만든다고 생각 width(넓이)height(높이)BufferedImage.TYPE_3BYTE_BGR(타입)
-			BufferedImage bt_image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-			//도화지에 그림을 그릴수 있게 하기 위한 과정
-			Graphics2D graphic = bt_image.createGraphics();
-			//도화지에 그림을 그림(그리고자하는이미지 좌상단 0,0부터 그리기시작/width넓이/height높이/일반적인경우null)
-			graphic.drawImage(bo_image,0,0,width,height,null);
-			//bt_image를 jpg형식으로 thumbnailFile에따라 저장
-			ImageIO.write(bt_image, "jpg", thumbnailFile);
-			*/
+		
 			BufferedImage bo_image = ImageIO.read(savefile);
 			//비율
 			double ratio = 3;
@@ -240,7 +219,7 @@ public class UsersController {
 	@PostMapping("/userIdChk")
 	@ResponseBody
 	public String userIdChk(String userId) {
-		//log.warn("useridchk 진입");
+		
 		int result = userserivce.idCheck(userId);
 		if(result != 0) {
 			return "fail";

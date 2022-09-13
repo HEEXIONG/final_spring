@@ -35,7 +35,7 @@
 </head>
 <body>
 <form action="/users/insert" method="post" enctype="multipart/form-data">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
 
 아이디:<input class="USER_ID" name="USER_ID"><br/>
 <span class="id_not_exist">사용 가능한 아이디입니다</span>
@@ -90,47 +90,25 @@
 //이미지 구현 시작//////////////////////////////////////////////
 
 
-$("input[type='file']").on("change",function(e){ //input태그의 파일타입이 무언가 바꼈을때
+$("input[type='file']").on("change",function(e){ 
 	
-	if($(".imgDeleteBtn").length > 0){
-		deleteFile();
-	}
 	
-	//첨부파일을 서버로 전송하기 위해 formdata 객체 사용(화면의 이동 없이 첨부파일을 서버로 전송하기 위해)
-	//formdata 객체를 생성하고 객체안에 첨부파일을 넣어 formdata객체 자체를 서버로 전송
-	let formData = new FormData();//formdata객체생성
-	
-	let fileInput = $('input[name="uploadFile"]')//파일 객체 불러오기
-	let fileList = fileInput[0].files; //filelist 접근
-	console.log("filelist 접근 : "+ fileList)
-	let fileObj = fileList[0]; //filelist안에 있는 file 객체 접근
-	console.log("file 객체 접근:" + fileObj )
-	
-	//파일 인터페이스가 가진속성을 이용해 확인(name,size,type)
-	//파일체크(타입,사이즈)
-/* 	if(!fileCheck(fileObj.name, fileObj.size)){
-		return false;
-	} */
-	
-	//한개의 파일을 업로드할 경우
-	//FormData.append(key, value) //서버로 첨부파일을 전송하기 위해 사용 
-	formData.append("uploadFile",fileObj)//fileObj=filelist안의 파일객체
-	
-	/* 여러개의 파일을 업로할 경우
-	for(let i = 0 ; i<fileList.length; i++){
-		fromData.append("uploadFile",fileObj)
-	}*/
+	let formData = new FormData();
+	let fileInput = $('input[name="uploadFile"]')
+	let fileList = fileInput[0].files; 
+	let fileObj = fileList[0]; 
+	formData.append("uploadFile",fileObj)
 	
 	$.ajax({
 		url : '/users/uploadAjaxAction',
 		enctype:'multipart/form-data',
-		processData : false, //서버에 쿼리스트링으로  데이터 전달할지
-		contentType : false, //서버로 전송되는 데이터의 contentType
+		processData : false, 
+		contentType : false, 
 		data : formData, // form데이터 객체를 보냄
-		beforeSend : function(xhr)
+		/* beforeSend : function(xhr)
         {   
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-        },
+        }, */
 		type : 'POST', //서버 요청 타입
 		dataType: 'json', // 서버로부터 반환받을 데이터 타입
 		success : function(result){
@@ -141,6 +119,9 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 			alert("이미지 파일이 아닙니다.")
 		}
 	});
+	if($(".imgDeleteBtn").length > 0){
+		deleteFile();
+	}
 	
 })
 	//gif|svg|ico 나중에 추가
@@ -271,7 +252,7 @@ function execution_daum_address(){
     
 }
 //주소 api 끝////////////////////////////////////////////////////////
-// 중복 체크 시작/////////////////////////////////////////////////////////
+// 중복 체크 시작//////////////////////////////////////////////////////
 $(".USER_ID").on("propertychange change keyup paste input",function(){
 	//console.log("중복 테스트")
 	var userId = $('.USER_ID').val();
@@ -279,10 +260,10 @@ $(".USER_ID").on("propertychange change keyup paste input",function(){
 	$.ajax({
 		type :"post",
 		url : "/users/userIdChk",
-		beforeSend : function(xhr)
-        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+		/* beforeSend : function(xhr)
+        {   데이터를 전송하기 전에 헤더에 csrf값을 설정한다
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-        },
+        }, */
 		data : data,
 		success : function(result){
 			//console.log("성공 여부" + result);
@@ -302,10 +283,10 @@ $(".USER_NICKNAME").on("propertychange change keyup paste input",function(){
 	var data = {usernick:usernick} //'컨트롤에 넘길 데이터 이름 : 실제 데이터'
 	$.ajax({
 		type :"post",
-		beforeSend : function(xhr)
-        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+		/* beforeSend : function(xhr)
+        {   
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-        },
+        }, */
 		url : "/users/usernickChk",
 		data : data,
 		success : function(result){
