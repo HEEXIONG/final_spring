@@ -18,5 +18,10 @@ where pd_code > 0
 order by pd_code desc, regdate desc
 ]]>
 </select>
+
+ 	 <update id="updateReplyCnt">
+	 	update pd_regist set replycnt = replycnt + #{amount} where pd_code = #{pd_code}
+	 </update>
+
 </mapper>
 

@@ -21,7 +21,7 @@ import com.spring.service.ReplyService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
-@RequestMapping("/replies/")
+@RequestMapping("/repliess/")
 @RestController
 @AllArgsConstructor
 @Log4j

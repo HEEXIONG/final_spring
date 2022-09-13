@@ -19,4 +19,6 @@ public class PdVo {
 	
 	private Long price;
 	
+	private int replyCnt;
+	
 }
