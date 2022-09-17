@@ -11,6 +11,9 @@
 </head>
 <body>
 
+
+
+
 <h1>로그인 페이지 커스텀</h1>
 <h2> <c:out value="${error}"/> </h2>
 <h2> <c:out value="${logout}"/> </h2>

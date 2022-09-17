@@ -30,7 +30,7 @@
 </form>
 <form action="/users/insert">
 <div class="login_button_wrap">
-<input type="submit" class="login_button" value="유저로그인">
+<input type="submit" class="login_button" value="회원가입">
 </div>	
 </form>
 <div align="center">
