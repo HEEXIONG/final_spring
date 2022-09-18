@@ -6,9 +6,71 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+
+<style>
+body {
+	  padding-top: 100px;
+	  padding-bottom: 30px;
+}
+</style>
 <body>
 		
-		<form role="form" action="/qna/modify" method="post">
+		<article>
+		<div class="container" role="main">
+			<h2>Q&A</h2>
+			<form name="form" id="form" role="form" action="/qna/modify" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
+				
+				<div class="mb-3">
+					<label for="tag">NO.</label> <input type="text"
+						class="form-control" name='qno' id="tag"
+						value="${board.qno}" readonly="readonly">
+				</div>
+
+
+				<div class="mb-3">
+					<label for="title">제목</label> <input class="form-control"
+						name='q_title' id="title"  value="${board.q_title}" >
+				</div>
+
+				<div class="mb-3">
+					<label for="reg_id">작성자</label> <input class="form-control"
+						name='q_writer' id="reg_id"
+						value="${board.q_writer}" readonly="readonly">
+				</div>
+
+				<div class="mb-3">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="5" name='q_content'
+						id="content">
+					${board.q_content}
+					</textarea>
+				</div>
+
+			</form>
+			<div>
+				 <button type="submit" data-oper='modify' class="tn btn-sm btn-primary"">글 수정</button>
+   				<button type="submit" data-oper='remove' class="tn btn-sm btn-primary">글 삭제</button>    
+			
+				<button type="button" class="btn btn-sm btn-primary" id="btnList"
+					onclick="history.go()">취소</button>
+			</div>
+			
+			
+		</div>
+	</article>
+		
+		<%-- <form role="form" action="/qna/modify" method="post">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
 	  
 		
@@ -41,7 +103,7 @@
    <button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>    
 	<button data-oper='list' onclick="location.href='/qna/list'">리스트</button>
        
-	</form>
+	</form> --%>
 	
 </body>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

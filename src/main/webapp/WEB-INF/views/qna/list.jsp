@@ -16,7 +16,7 @@
 <body>
 <div class="page-wrapper">
     <div class="container-fluid">
-        <div class="col-lg-8"><!--게시판 넓이 -->
+       <!--  <div class="col-lg-8">게시판 넓이 -->
             <div class="col-lg-12">
                 <h1 class="page-header">Q&A 게시판</h1>
             </div>
@@ -39,7 +39,7 @@
                               
                                 <th>작성자</th>
                                 <th>작성일자</th>
-                                <th>수정일자</th>
+                                <!-- <th>수정일자</th> -->
                             </tr>
                         </thead>
                         
@@ -56,8 +56,8 @@
                                 <td><c:out value="${QnaVO.q_content}"/></td>
                                 <td><c:out value="${QnaVO.q_writer}"/></td>
                                
-                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${QnaVO.regdate}"/></td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${QnaVO.updatedate}"/></td>
+                                <td><fmt:formatDate pattern="yyyy-MM-dd" value="${QnaVO.regdate}"/></td>
+                              <%--   <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${QnaVO.updatedate}"/></td> --%>
                             </tr>
                          </c:forEach>   
                         </tbody>
@@ -105,8 +105,12 @@
 			</form>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </div>
+
+
+
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 	// Page 246 소스 코딩 시작

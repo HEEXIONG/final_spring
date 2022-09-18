@@ -10,58 +10,78 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
- <!-- Bootstrap Core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
-    <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
 
-    <!-- DataTables CSS -->
-    <link href="/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+body {
+	  padding-top: 100px;
+	  padding-bottom: 30px;
+}
+</style>
 
 <body>
 
-		<div class="form-group">
-          <label>NO.</label> <input class="form-control" name='qno'
-             value='<c:out value="${board.qno}" />' readonly="readonly">
-        </div>
+			<!-- 게시글 읽기 -->
+	<article>
+		<div class="container" role="main">
+			<h2>Q&A</h2>
+			<form name="form" id="form" role="form">
 
-          <div class="form-group">
-            <label>Title</label> 
-            <input class="form-control" name='q_title'
-            value='<c:out value="${board.q_title}" />' readonly="readonly">
-          </div>
+				<div class="mb-3">
+					<label for="tag">NO.</label> <input type="text"
+						class="form-control" name='qno' id="tag"
+						value='<c:out value="${board.qno}" />' readonly="readonly">
+				</div>
 
-          <div class="form-group">
-          <label>Text area</label>
-          <textarea class="form-control" rows="3" name='q_content'
-            readonly="readonly"><c:out value="${board.q_content}" /></textarea>
-        </div>
 
-          <div class="form-group">
-            <label>Writer</label>
-       		<input class="form-control" name='q_writer'
-       		 value='<c:out value="${board.q_writer}" />' readonly="readonly"
-       		>
-       
-          </div>
-          <sec:authentication property="principal" var ="userinfo"/>
-          <sec:authorize access="isAuthenticated()">
+				<div class="mb-3">
+					<label for="title">제목</label> <input class="form-control"
+						name='q_title' id="title" value='<c:out value="${board.q_title}" />'
+						readonly="readonly">
+				</div>
+
+				<div class="mb-3">
+					<label for="reg_id">작성자</label> <input class="form-control"
+						name='q_writer' id="reg_id"
+						value='<c:out value="${board.q_writer}" />' readonly="readonly">
+				</div>
+
+				<div class="mb-3">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="5" name='q_content'
+						id="content" readonly="readonly">
+					<c:out value="${board.q_content}" />
+					</textarea>
+				</div>
+
+			</form>
+
+			<div>
+				<button type="button" class="btn btn-sm btn-primary" id="btnList"
+					onclick="location.href='/qna/list'">목록</button>
+			
+        <%-- <sec:authentication property="principal" var ="userinfo"/>
+     	<sec:authorize access="isAuthenticated()">
+          <c:if test="${userinfo.user.USER_NICKNAME eq board.q_writer }"> --%>
+   			 <button data-oper='modify' class="btn btn-sm btn-primary" onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>   
+ 		<%--   </c:if>
+ 		</sec:authorize> --%>
+			
+			</div>
+		</div>
+	</article>
           
-          <c:if test="${userinfo.user.USER_NICKNAME eq board.q_writer }">
-    <button data-oper='modify' class="" onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>   
- </c:if>
- </sec:authorize>
-	<button data-oper='list' class="" onclick="location.href='/qna/list'">리스트</button>
+          
+	
  <form id='operForm' action="/qna/modify" method="get">
 	<input type='hidden' id='qno' name='qno' value='<c:out value="${board.qno}"/>'>
 	<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'>
@@ -86,42 +106,45 @@
   </ul>
 </div>
 
-<!-- <div class='row'>
-  <div class="col-lg-12">    
-    /.panel
-     <div class="panel panel-default">
-   
-			<div class="panel-heading">
-      	      	<i class="fa fa-comments fa-fw"></i> 댓글
-      	      	
-      	      		<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글작성</button>
-      	      </div>
 
-
-      	/.panel-heading
-      	<div class="panel-body">  
-      	
-      	    <ul class="chat">
-      	       start reply
-      	    	<li class="left clearfix" data-rno='12'>
-      	    		<div>
-      	    		<div class="header">
-      	    			<strong class="primary-font">user00</strong>
-      	    			<small class="pull-right text-muted">2022-07-31 13:20</small>
-      	    		</div>
-      	    		<p>Good job!</p>
-	      	    	</div>
-	      	    </li>
-				Page414 댓글 목록 처리 get jsp 소스 코딩 끝
-	        </ul>
-    	</div>
-    	/.panel .chat-panel
-     </div>	
-  </div>
-  ./ end row
-</div>
-
+<!-- 	'<div class="reply">'+
+	'<div class="media text-muted pt-3" id="rno' + rno + '" >'+
+	'<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">'+
+	'<title>Placeholder</title>'+
+	'<image href="/resources/img/icon.png" width = 100% height =100%></image>'+
+	
+	'</svg>'+
+	'<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">'+
+	'<span class="d-block">'+
+	'<strong class="text-gray-dark">' + reg_id + '</strong>'+ 
+	'<span style="padding-left: 7px; font-size: 9pt">'+
+	'<a href="javascript:void(0)" id = "saveBtn" style="padding-right:5px">저장</a>'+
+	'<a href="javascript:void(0)" onClick="history.go()">취소<a>'+
+	'</span>'+
+	'</span>'+
+	'<textarea name="editContent" id="editContent" class="form-control" rows="3">'+
+	content +
+	'</textarea>'+
+	'</p>'+
+	'</div>'+
+	'<input class="form-control" id="rno"  name="rno" type="hidden" value="' + rno + '" />' +
+	'</div>'; 
  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>      
