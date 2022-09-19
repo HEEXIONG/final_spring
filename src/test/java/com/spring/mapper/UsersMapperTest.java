@@ -24,15 +24,18 @@ public class UsersMapperTest {
 	@Test
 	public void inserttest() {
 		UsersVO vo = new UsersVO();
-		vo.setUSER_ID("테스터22");
-		vo.setUSER_PW("테스터22");
-		vo.setUSER_NICKNAME("테스터22");
-		vo.setUSER_PHONE("010-7897-45642");
-		vo.setUSER_EMAIL("etetetet@wtete.com2");
-		vo.setUSER_POST("테스터22");
-		vo.setUSER_ADDR1("테스터22");
-		vo.setUSER_ADDR2("테스터22");
+		for(int i = 0; i<50 ; i++) {
+			
+		vo.setUSER_ID("tester"+i);
+		vo.setUSER_PW("tester"+i);
+		vo.setUSER_NICKNAME("tester"+i);
+		vo.setUSER_PHONE("tester"+i);
+		vo.setUSER_EMAIL("tester"+i);
+		vo.setUSER_POST("tester"+i);
+		vo.setUSER_ADDR1("tester"+i);
+		vo.setUSER_ADDR2("tester"+i);
 		mapper.userInsert(vo);
+		}
 		
 	}
 	@Test
