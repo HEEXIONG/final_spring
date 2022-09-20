@@ -68,7 +68,7 @@
                 <input type="text"  name="USER_ID" id="id"  autocomplete="off"  required>
                 <label for="id">USER NAME</label>
                 <span class="id_not_exist">사용 가능한 아이디입니다</span>
-<span class="id_exist">아이디가 이미 존재합니다.</span>
+				<span class="id_exist">아이디가 이미 존재합니다.</span>
             </div>
             <div class="int-area">
                 <input type="password" name="USER_PW" id="pw"  autocomplete="off"  required>
@@ -278,43 +278,31 @@ $("input[type='file']").on("change",function(e){ //input태그의 파일타입�
 function execution_daum_address(){
 	new daum.Postcode({
 		 oncomplete: function(data) {
-            
              var addr = ''; 
              var extraAddr = ''; 
 
-            
              if (data.userSelectedType === 'R') { 
                  addr = data.roadAddress;
              } else { 
                  addr = data.jibunAddress;
              }
-
              if(data.userSelectedType === 'R'){
-                
                  if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                      extraAddr += data.bname;
                  }
-              
                  if(data.buildingName !== '' && data.apartment === 'Y'){
                      extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                  }
-                 
                  if(extraAddr !== ''){
                      extraAddr = ' (' + extraAddr + ')';
                  }
-                
                  addr += extraAddr
-             
              } else {
-                 
                  addr += ' '
              }
 
-         
              $(".USER_POST").val(data.zonecode);
-            
              $(".USER_ADDR1").val(addr)
-           
              $(".USER_ADDR2").attr("readonly",false);
              $(".USER_ADDR2").focus();
          }
