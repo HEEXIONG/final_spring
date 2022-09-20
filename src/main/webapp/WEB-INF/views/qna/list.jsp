@@ -35,7 +35,7 @@
                             <tr>
                                 <th>No.1</th>
                                 <th>제목</th>
-                                <th>내용</th>
+                                <!-- <th>내용</th> -->
                               
                                 <th>작성자</th>
                                 <th>작성일자</th>
@@ -53,7 +53,7 @@
 									
                                <%--  <td><a href='/qna/get?qno=<c:out value="${QnaVO.qno}"/>'> --%>
                                <%--  <c:out value="${QnaVO.q_title}"/></a></td> --%>
-                                <td><c:out value="${QnaVO.q_content}"/></td>
+                               <%--  <td><c:out value="${QnaVO.q_content}"/></td> --%>
                                 <td><c:out value="${QnaVO.q_writer}"/></td>
                                
                                 <td><fmt:formatDate pattern="yyyy-MM-dd" value="${QnaVO.regdate}"/></td>

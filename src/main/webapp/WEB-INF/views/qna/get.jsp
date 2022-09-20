@@ -70,13 +70,13 @@ body {
 				<button type="button" class="btn btn-sm btn-primary" id="btnList"
 					onclick="location.href='/qna/list'">목록</button>
 
-				<%-- <sec:authentication property="principal" var ="userinfo"/>
+				<sec:authentication property="principal" var ="userinfo"/>
      	<sec:authorize access="isAuthenticated()">
-          <c:if test="${userinfo.user.USER_NICKNAME eq board.q_writer }"> --%>
+          <c:if test="${userinfo.user.USER_NICKNAME eq board.q_writer }"> 
 				<button data-oper='modify' class="btn btn-sm btn-primary"
 					onclick="location.href='/qna/modify?qno=<c:out value="${board.qno}"/>'">수정</button>
-				<%--   </c:if>
- 		</sec:authorize> --%>
+				</c:if>
+ 		</sec:authorize> 
 
 			</div>
 		</div>

@@ -33,9 +33,6 @@ body {
 			<h2>Q&A</h2>
 			<form role="form" action="/qna/register" method="post">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
-				
-			
-
 
 				<div class="mb-3">
 					<label for="title">제목</label> <input class="form-control"
@@ -59,7 +56,7 @@ body {
 				<button type="submit" class="btn btn-sm btn-primary">글 등록
             			</button>
 				<button type="button" class="btn btn-sm btn-primary" id="btnList"
-					onclick="history.go()">취소</button>
+					onclick="location.href='/qna/list'">취소</button>
 				</div>
 
 			</form>

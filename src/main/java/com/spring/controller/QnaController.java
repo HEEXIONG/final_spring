@@ -73,8 +73,6 @@ public class QnaController {
 		
 		List<ReplyVO> replyList = replyService.getList(cri, qno);
 		model.addAttribute("replyList", replyList);
-		
-		
 	}	
 	
 	@PreAuthorize("isAuthenticated()")
