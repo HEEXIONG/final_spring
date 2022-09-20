@@ -49,5 +49,10 @@ public class CommonController {
 	public void logoutget() {
 		log.info("custom logout");
 	}
+	
+	@GetMapping("/users/myinfo")
+	public void myinfo() {
+		log.info("myinfo");
+	}
 
 }
