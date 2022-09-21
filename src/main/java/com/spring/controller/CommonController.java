@@ -32,9 +32,32 @@ public class CommonController {
 		}
 		
 	}
+	@GetMapping("/customLogin1")
+	public void login1(String error, String logout , Model model) {
+		log.info("error: "+error);
+		log.info("logout: "+logout);
+		
+		if(error != null) {
+			model.addAttribute("error","Login error" );
+		}
+		if(logout != null) {
+			model.addAttribute("logout","logout!!");
+		}
+		
+	}
 	@GetMapping("/customLogout")
 	public void logoutget() {
 		log.info("custom logout");
+	}
+	
+	@GetMapping("/users/myinfo")
+	public void myinfo() {
+		log.info("myinfo");
+	}
+	
+	@GetMapping("/main")
+	public void main() {
+		log.info("main");
 	}
 
 }

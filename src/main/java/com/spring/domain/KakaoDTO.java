@@ -3,8 +3,10 @@ package com.spring.domain;
 import lombok.Data;
 
 @Data
-public class AuthVO {
-	private String userid;
-	private String auth;
+public class KakaoDTO {
+	
 	private Long USER_NO;
+	private String k_name;
+	private String k_email;
+
 }
