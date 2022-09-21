@@ -25,7 +25,7 @@
 			merchant_uid : 'merchant_' + new Date().getTime(),
 			name : "${read.pd_title}",
 			amount : ${read.price},
-			buyer_email : "hidden1477@naver.com",  // buyer_email도 수정하기 바랍니다.
+			buyer_email : "email",  // buyer_email도 수정하기 바랍니다.
 			buyer_name : "${userinfo.user.USER_NICKNAME}",
 			buyer_tel : "010-1234-5678",
 			buyer_addr : "서울특별시 강남구 역삼동",
@@ -90,6 +90,7 @@
 	<tr><th>글 내용</th><td>${read.pd_content}</td></tr>
 	<tr><th>가격</th><td>${read.price}</td></tr>
 	<button type="button" onclick="fn_buy()">결제하기</button>
+	
 	</table>
 	<p>사용자이름 : <sec:authentication property="principal.user.USER_NICKNAME" /> </p>
 <button type="submit" onclick="location.href='/pdregist/list'" formmethod="get">목록</button>
@@ -437,6 +438,9 @@ $(document).ready(function() {
 
 
 
+
+
+
 <script type="text/javascript">
 	//Page404 연습할때 아래 구문은 주석 처리합니다.
 	// $(document).ready(function () {
@@ -580,6 +584,9 @@ $(document).ready(function() {
 
     </div>
     <!-- /#wrapper -->
+    
+    
+    
 
 
 </body>
