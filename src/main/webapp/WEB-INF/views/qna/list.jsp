@@ -17,6 +17,7 @@
 <div class="page-wrapper">
     <div class="container-fluid">
        <!--  <div class="col-lg-8">게시판 넓이 -->
+       <div class="col-lg-8" style="float: none; margin:0 auto;">
             <div class="col-lg-12">
                 <h1 class="page-header">Q&A 게시판</h1>
             </div>
