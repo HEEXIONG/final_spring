@@ -48,7 +48,7 @@ body {
 				<div class="mb-3">
 					<label for="content">내용</label>
 					<textarea class="form-control" rows="5" name='q_content'
-						id="content" >
+						>
 					<c:out value="${get.q_content}" />
 					</textarea>
 				</div>
@@ -67,25 +67,6 @@ body {
 
 
 
- <%-- 	<form role="form" action="/qna/register" method="post">
- 	 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
-          <div class="form-group">
-            <label>Title</label> <input class="form-control" name='q_title'>
-          </div>
-          <div class="form-group">
-            <label>Text area</label>
-            <textarea class="form-control" rows="3" name='q_content'></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>Writer</label>
-       <input class="form-control" name='q_writer' value='<sec:authentication property="principal.user.USER_NICKNAME"/>' readonly="readonly">
-       
-          </div>
-          <button type="submit" class="btn btn-default">Submit
-            Button</button>
-          <button type="reset" class="btn btn-default">Reset Button</button>
-        </form> --%>
 
 
 
