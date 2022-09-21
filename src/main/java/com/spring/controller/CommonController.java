@@ -54,5 +54,10 @@ public class CommonController {
 	public void myinfo() {
 		log.info("myinfo");
 	}
+	
+	@GetMapping("/main")
+	public void main() {
+		log.info("main");
+	}
 
 }

@@ -26,7 +26,7 @@ public class UsersMapperTest {
 		UsersVO vo = new UsersVO();
 		for(int i = 50; i<100 ; i++) {
 			
-		vo.setUSER_ID("tester"+i);
+		vo.setUSER_ID("sdfsdfsdfsdfsdfsdf");
 		vo.setUSER_PW("tester"+i);
 		vo.setUSER_NICKNAME("tester"+i);
 		vo.setUSER_PHONE("tester"+i);
