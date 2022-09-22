@@ -24,9 +24,9 @@ public class UsersMapperTest {
 	@Test
 	public void inserttest() {
 		UsersVO vo = new UsersVO();
-		for(int i = 50; i<100 ; i++) {
+		for(int i = 200; i<250 ; i++) {
 			
-		vo.setUSER_ID("sdfsdfsdfsdfsdfsdf");
+		vo.setUSER_ID("testert"+i);
 		vo.setUSER_PW("tester"+i);
 		vo.setUSER_NICKNAME("tester"+i);
 		vo.setUSER_PHONE("tester"+i);

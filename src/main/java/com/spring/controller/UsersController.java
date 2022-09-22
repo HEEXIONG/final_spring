@@ -54,20 +54,6 @@ public class UsersController {
 	
 	
 	
-	
-	
-	
-	
-	//===============================================================
-
-
-	//회원가입페이지(get)
-	@GetMapping("/insert")
-	public void insertget() {
-		log.warn("회원가입 페이지");
-		log.info("info");
-	}
-	//회원가입페이지(post)
 	@PostMapping("/insert")
 	public String insertpost(UsersVO uservo) {
 		String originPw = "";
@@ -80,8 +66,17 @@ public class UsersController {
 		
 		log.info("유저정보"+uservo);
 		userserivce.userInsert(uservo);
-		//log.warn("회원가입 완료");
 		return "redirect:/";
+	}
+	
+	
+	
+	
+
+	@GetMapping("/insert")
+	public void insertget() {
+		log.warn("회원가입 페이지");
+		log.info("info");
 	}
 	
 	@GetMapping("/display")      
@@ -240,7 +235,6 @@ public class UsersController {
 	@PostMapping("/userIdChk")
 	@ResponseBody
 	public String userIdChk(String userId) {
-		//log.warn("useridchk 진입");
 		int result = userserivce.idCheck(userId);
 		if(result != 0) {
 			return "fail";
@@ -252,7 +246,7 @@ public class UsersController {
 	@PostMapping("/usernickChk")
 	@ResponseBody
 	public String usernickChk(String usernick) {
-		//log.warn("useridchk 진입");
+		
 		int result = userserivce.nickCheck(usernick);
 		if(result != 0) {
 			return "fail";

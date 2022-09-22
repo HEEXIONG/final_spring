@@ -312,19 +312,19 @@ function execution_daum_address(){
 //주소 api 끝////////////////////////////////////////////////////////
 // 중복 체크 시작/////////////////////////////////////////////////////////
 $("#id").on("propertychange change keyup paste input",function(){
-	//console.log("중복 테스트")
+	
 	var userId = $('#id').val();
-	var data = {userId:userId} //'컨트롤에 넘길 데이터 이름 : 실제 데이터'
+	var data = {userId:userId} 
 	$.ajax({
 		type :"post",
 		url : "/users/userIdChk",
 		beforeSend : function(xhr)
-        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+        {   
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
         },
 		data : data,
 		success : function(result){
-			//console.log("성공 여부" + result);
+			
 			if(result != 'fail'){
 				$(".id_not_exist").css("display","inline-block");
 				$(".id_exist").css("display","none");
@@ -333,7 +333,7 @@ $("#id").on("propertychange change keyup paste input",function(){
 				$(".id_not_exist").css("display","none");
 			}
 		}
- 	}); //ajax 종료
+ 	});
 });
 $("#name").on("propertychange change keyup paste input",function(){
 	//console.log("중복 테스트")

@@ -36,16 +36,16 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">colo<span>shop</span></a>
+							<a href="#">Eles<span>co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="#">home</a></li>
 								<li><a href="#">shop</a></li>
-								<li><a href="#">promotion</a></li>
-								<li><a href="#">pages</a></li>
-								<li><a href="#">blog</a></li>
+								<li><a href="#">notice</a></li>
+								<li><a href="#">Q&A</a></li>
 								<li><a href="contact.html">contact</a></li>
+								<li><a href="#">Login</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -53,7 +53,7 @@
 								<li class="checkout">
 									<a href="#">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<span id="checkout_items" class="checkout_items">2</span>
+										
 									</a>
 								</li>
 							</ul>
@@ -73,30 +73,7 @@
 		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 		<div class="hamburger_menu_content text-right">
 			<ul class="menu_top_nav">
-				<li class="menu_item has-children">
-					<a href="#">
-						usd
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">cad</a></li>
-						<li><a href="#">aud</a></li>
-						<li><a href="#">eur</a></li>
-						<li><a href="#">gbp</a></li>
-					</ul>
-				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						English
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">French</a></li>
-						<li><a href="#">Italian</a></li>
-						<li><a href="#">German</a></li>
-						<li><a href="#">Spanish</a></li>
-					</ul>
-				</li>
+				
 				<li class="menu_item has-children">
 					<a href="#">
 						My Account
@@ -119,13 +96,13 @@
 
 	<!-- Slider -->
 
-	<div class="main_slider" style="background-image:url(images/test1.jpg)">
+	<div class="main_slider" style="background-image:url(/resources/elesco/images/test1.jpg)">
 		<div class="container fill_height">
 			<div class="row align-items-center fill_height">
 				<div class="col">
 					<div class="main_slider_content">
-						<h6>Spring / Summer Collection 2017</h6>
-						<h1>Get up to 30% Off New Arrivals</h1>
+						<h6>Spring / Summer Collection 2022</h6>
+						<h1>Get up to 30% Off</h1>
 						
 					</div>
 				</div>
@@ -157,10 +134,9 @@
 								<div class="product-item">
 									<div class="product discount">
 										<div class="product_image">
-											<img src="images/product_1.png" alt="">
+											<img src="/resources/elesco/images/pd1.jpg" alt="" style="height: 220px">
 										</div>
 										<div class="favorite favorite_left"></div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 										<div class="product_info">
 											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 											<div class="product_price">$520.00<span>$590.00</span></div>
@@ -175,10 +151,9 @@
 								<div class="product-item women">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_2.png" alt="">
+											<img src="/resources/elesco/images/pd2.jpg" alt="" style="height: 220px">
 										</div>
 										<div class="favorite"></div>
-										<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 										<div class="product_info">
 											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 											<div class="product_price">$610.00</div>
@@ -193,7 +168,7 @@
 								<div class="product-item women">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_3.png" alt="">
+											<img src="/resources/elesco/images/pd3.png" alt="" style="height: 220px">
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
@@ -210,9 +185,8 @@
 								<div class="product-item accessories">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_4.png" alt="">
+											<img src="/resources/elesco/images/pd4.png" alt="" style="height: 220px">
 										</div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
 											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
@@ -228,7 +202,7 @@
 								<div class="product-item women men">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_5.png" alt="">
+											<img src="/resources/elesco/images/pd5.png" alt="" style="height: 220px">
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
@@ -245,10 +219,10 @@
 								<div class="product-item accessories">
 									<div class="product discount">
 										<div class="product_image">
-											<img src="images/product_6.png" alt="">
+											<img src="/resources/elesco/images/pd6.png" alt="" style="height: 220px">
 										</div>
 										<div class="favorite favorite_left"></div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"></div>
 										<div class="product_info">
 											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 											<div class="product_price">$520.00<span>$590.00</span></div>
@@ -263,7 +237,7 @@
 								<div class="product-item women">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_7.png" alt="">
+											<img src="/resources/elesco/images/pd7.png" alt="" style="height: 220px">
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
@@ -280,7 +254,7 @@
 								<div class="product-item accessories">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_8.png" alt="">
+											<img src="/resources/elesco/images/product_8.png" alt="">
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
@@ -297,7 +271,7 @@
 								<div class="product-item men">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_9.png" alt="">
+											<img src="/resources/elesco/images/product_9.png" alt="">
 										</div>
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
@@ -315,7 +289,7 @@
 								<div class="product-item men">
 									<div class="product">
 										<div class="product_image">
-											<img src="images/product_10.png" alt="">
+											<img src="/resources/elesco/images/product_10.png" alt="">
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
@@ -348,7 +322,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="section_title new_arrivals_title">
+					 <div class="section_title new_arrivals_title">
 						<h2>New Arrivals</h2>
 					</div>
 				</div>
@@ -374,7 +348,7 @@
 						<div class="product-item men">
 							<div class="product discount product_filter">
 								<div class="product_image">
-									<img src="images/product_1.png" alt="">
+									<img src="/resources/elesco/images/product_1.png" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								
@@ -391,10 +365,9 @@
 						<div class="product-item women">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_2.png" alt="">
+									<img src="/resources/elesco/images/product_2.png" alt="">
 								</div>
 								<div class="favorite"></div>
-								<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 								<div class="product_info">
 									<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 									<div class="product_price">$610.00</div>
@@ -408,7 +381,7 @@
 						<div class="product-item women">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_3.png" alt="">
+									<img src="/resources/elesco/images/product_3.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -424,9 +397,8 @@
 						<div class="product-item accessories">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_4.png" alt="">
+									<img src="/resources/elesco/images/product_4.png" alt="">
 								</div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
 									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
@@ -441,7 +413,7 @@
 						<div class="product-item women men">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_5.png" alt="">
+									<img src="/resources/elesco/images/product_5.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -457,10 +429,9 @@
 						<div class="product-item accessories">
 							<div class="product discount product_filter">
 								<div class="product_image">
-									<img src="images/product_6.png" alt="">
+									<img src="/resources/elesco/images/product_6.png" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 								<div class="product_info">
 									<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 									<div class="product_price">$520.00<span>$590.00</span></div>
@@ -474,7 +445,7 @@
 						<div class="product-item women">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_7.png" alt="">
+									<img src="/resources/elesco/images/product_7.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -490,7 +461,7 @@
 						<div class="product-item accessories">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_8.png" alt="">
+									<img src="/resources/elesco/images/product_8.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
@@ -506,9 +477,8 @@
 						<div class="product-item men">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_9.png" alt="">
+									<img src="/resources/elesco/images/product_9.png" alt="">
 								</div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
 									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
@@ -523,7 +493,7 @@
 						 <div class="product-item men">
 							<div class="product product_filter">
 								<div class="product_image">
-									<img src="images/product_10.png" alt="">
+									<img src="/resources/elesco/images/product_10.png" alt="">
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">

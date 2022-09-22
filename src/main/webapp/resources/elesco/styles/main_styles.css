@@ -556,7 +556,7 @@ section
 {
 	display: block;
 	color: #1e1e27;
-	font-size: 13px;
+	font-size: 19px;
 	font-weight: 500;
 	text-transform: uppercase;
 	padding: 20px;
@@ -812,7 +812,7 @@ section
 }
 .logo_container a span
 {
-	color: #fe4c50;
+	color: #a39292;
 }
 
 /*********************************
@@ -855,7 +855,7 @@ section
 	align-items: center;
 	width: auto;
 	height: 40px;
-	background: #fe4c50;
+	background: #a39292;
 	border-radius: 3px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -865,7 +865,7 @@ section
 }
 .red_button:hover
 {
-	background: #FE7C7F !important;
+	background: #afa6a6 !important;
 }
 .red_button a
 {
@@ -988,12 +988,12 @@ section
 }
 .grid_sorting_button.active:hover
 {
-	background: #FE7C7F !important;
+	background: rgb(192, 192, 192) !important;
 }
 .grid_sorting_button.active
 {
 	color: #FFFFFF;
-	background: #fe4c50;
+	background: #8d8989;
 }
 
 /*********************************
@@ -1042,10 +1042,14 @@ section
 }
 .product_image
 {
+	
 	width: 100%;
+	height: 220px;
+	
 }
 .product_image img
 {
+	
 	width: 100%;
 }
 .product_info
@@ -1074,7 +1078,7 @@ section
 .product_price
 {
 	font-size: 16px;
-	color: #fe4c50;
+	color: #747474;
 	font-weight: 600;
 }
 .product_price span
@@ -1252,7 +1256,7 @@ section
 	transform: translateX(-50%);
 	width: 60px;
 	height: 5px;
-	background: #fe4c50;
+	background: #a39292;
 	content: '';
 }
 .timer
