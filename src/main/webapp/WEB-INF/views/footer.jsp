@@ -44,7 +44,7 @@
 <script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="/resources/elesco/plugins/easing/easing.js"></script>
 <script src="/resources/elesco/js/custom.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script> -->
 <script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="/resources/elesco/js/contact_custom.js"></script>
 </body>
