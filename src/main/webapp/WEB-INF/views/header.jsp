@@ -64,13 +64,18 @@
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+								<sec:authorize access="isAnonymous()">
+								<li><a href="/customLogin1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								</sec:authorize>
+								<sec:authorize access="isAuthenticated()">
 								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								<li class="checkout">
-									<a href="#">
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										
-									</a>
-								</li>
+								</sec:authorize>
+								<sec:authorize access="isAnonymous()">
+								<li class="checkout"><a href="/customLogin1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+								</sec:authorize>
+								<sec:authorize access="isAuthenticated()">
+								<li class="checkout"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+								</sec:authorize>
 							</ul>
 							<div class="hamburger_container">
 								<i class="fa fa-bars" aria-hidden="true"></i>
