@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -49,7 +52,16 @@
 								<li><a href="#">notice</a></li>
 								<li><a href="#">Q&A</a></li>
 								<li><a href="/contact">contact</a></li>
+								 <sec:authorize access="isAnonymous()">
+								
 								<li><a href="/customLogin1">Login</a></li>
+								</sec:authorize>
+								 <sec:authorize access="isAuthenticated()">
+								<li><a href="/customLogout">Logout</a></li>
+								</sec:authorize>
+								
+								
+								
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
