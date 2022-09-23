@@ -53,7 +53,6 @@
 								<li><a href="#">Q&A</a></li>
 								<li><a href="/contact">contact</a></li>
 								 <sec:authorize access="isAnonymous()">
-								
 								<li><a href="/customLogin1">Login</a></li>
 								</sec:authorize>
 								 <sec:authorize access="isAuthenticated()">
@@ -96,8 +95,8 @@
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="menu_selection">
-						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						<li><a href="/customLogin1"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="/users/insert"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 					</ul>
 				</li>
 				<li class="menu_item"><a href="#">home</a></li>
@@ -105,7 +104,7 @@
 				<li class="menu_item"><a href="#">promotion</a></li>
 				<li class="menu_item"><a href="#">pages</a></li>
 				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
+				<li class="menu_item"><a href="/contact">contact</a></li>
 			</ul>
 		</div>
 	</div>

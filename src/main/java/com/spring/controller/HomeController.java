@@ -33,7 +33,8 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "pdregist/list";
+		//return "pdregist/list";
+		return "main";
 	}
 	
 }
