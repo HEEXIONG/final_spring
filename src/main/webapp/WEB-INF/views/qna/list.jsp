@@ -12,11 +12,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 <div class="page-wrapper">
     <div class="container-fluid">
        <!--  <div class="col-lg-8">게시판 넓이 -->
+       <div class="col-lg-8" style="float: none; margin:0 auto;">
             <div class="col-lg-12">
                 <h1 class="page-header">Q&A 게시판</h1>
             </div>
@@ -108,7 +111,7 @@
     <!-- </div> -->
 </div>
 
-
+<jsp:include page="../footer.jsp"></jsp:include>
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

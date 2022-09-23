@@ -43,14 +43,14 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">Eles<span>co</span></a>
+							<a href="/main">Eles<span>co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
 								<li><a href="#">shop</a></li>
 								<li><a href="#">notice</a></li>
-								<li><a href="#">Q&A</a></li>
+								<li><a href="/qna/list">Q&A</a></li>
 								<li><a href="/contact">contact</a></li>
 								 <sec:authorize access="isAnonymous()">
 								<li><a href="/customLogin1">Login</a></li>

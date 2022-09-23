@@ -23,16 +23,15 @@
 	crossorigin="anonymous">
 
 <style>
-body {
-	  padding-top: 100px;
-	  padding-bottom: 30px;
+.aaa{
+	padding-top: 150px;
 }
 </style>
 
 <body>
-
+<jsp:include page="../header.jsp"></jsp:include>
 	<!-- 게시글 읽기 -->
-	<article>
+	<article class="aaa">
 		<div class="container" role="main">
 			<h2>Q&A</h2>
 			<form name="form" id="form" role="form">
