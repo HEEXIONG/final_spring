@@ -17,7 +17,7 @@
 	
 	<!-- <security:form-login/> 로그인 폼 제공-->
 		<!-- <security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" /> -->
-		<security:form-login login-page="/customLogin" />
+		<security:form-login login-page="/customLogin1" />
 		
 		<security:logout logout-url="/customLogout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID"/>
 	

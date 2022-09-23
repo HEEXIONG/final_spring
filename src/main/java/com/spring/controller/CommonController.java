@@ -10,6 +10,14 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @Log4j
 public class CommonController {
+	@GetMapping("/main")
+	public void main() {
+		log.info("main");
+	}
+	@GetMapping("/contact")
+	public void contact() {
+		log.info("contact");
+	}
 	
 	
 	
@@ -55,9 +63,6 @@ public class CommonController {
 		log.info("myinfo");
 	}
 	
-	@GetMapping("/main")
-	public void main() {
-		log.info("main");
-	}
+	
 
 }

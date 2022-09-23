@@ -29,7 +29,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		response.sendRedirect("/test/member");
 		return;
 	}
-	response.sendRedirect("/");
+	response.sendRedirect("/main");
 	}
 
 }
