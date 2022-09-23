@@ -99,11 +99,10 @@
 						<li><a href="/users/insert"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 					</ul>
 				</li>
-				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="/main">home</a></li>
 				<li class="menu_item"><a href="#">shop</a></li>
-				<li class="menu_item"><a href="#">promotion</a></li>
-				<li class="menu_item"><a href="#">pages</a></li>
-				<li class="menu_item"><a href="#">blog</a></li>
+				<li class="menu_item"><a href="#">notice</a></li>
+				<li class="menu_item"><a href="/qna/list">Q&A</a></li>
 				<li class="menu_item"><a href="/contact">contact</a></li>
 			</ul>
 		</div>
