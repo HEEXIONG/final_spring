@@ -336,19 +336,17 @@ $("#id").on("propertychange change keyup paste input",function(){
  	});
 });
 $("#name").on("propertychange change keyup paste input",function(){
-	//console.log("중복 테스트")
 	var usernick = $('#name').val();
-	var data = {usernick:usernick} //'컨트롤에 넘길 데이터 이름 : 실제 데이터'
+	var data = {usernick:usernick}
 	$.ajax({
 		type :"post",
 		beforeSend : function(xhr)
-        {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+        {  
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
         },
 		url : "/users/usernickChk",
 		data : data,
 		success : function(result){
-			//console.log("성공 여부" + result);
 			if(result != 'fail'){
 				$(".nick_not_exist").css("display","inline-block");
 				$(".nick_exist").css("display","none");
@@ -357,7 +355,7 @@ $("#name").on("propertychange change keyup paste input",function(){
 				$(".nick_not_exist").css("display","none");
 			}
 		}
- 	}); //ajax 종료
+ 	}); 
 });
 //중복 체크 끝/////////////////////////////////////////////////////////
 </script>
