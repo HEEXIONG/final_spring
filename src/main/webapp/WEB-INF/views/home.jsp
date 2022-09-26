@@ -56,6 +56,10 @@
   <button class="btn btn-primary" type="button" onclick="location.href='/board/list'">공지사항 게시판</button>
 </div>
 
+<div>
+	<button class="btn btn primary" type="button" onclick="location.href='/group/list'">상품 후기 게시판</button>
+</div>
+
 <form action = "regist" method = "get">
 <table border="1" width="880">
         <tr>

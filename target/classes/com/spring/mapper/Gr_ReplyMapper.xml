@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.Gr_ReplyMapper">
+
+	<insert id="insert">
+		
+		insert into gr_reply (rno, gr_bno, reply, replyer)
+		values (seq_gr.nextval, #{gr_bno}, #{reply}, #{replyer})
+		
+	</insert>
+	
+	<select id="read" resultType="com.spring.domain.Gr_ReplyVO">
+		
+		select * from gr_reply where rno = #{rno}
+		
+	</select>
+	
+	<delete id="delete">
+		
+		delete from gr_reply where rno = #{rno}
+		
+	</delete>
+	
+	<update id="update">
+	
+		update gr_reply set reply = #{reply}, updatedate = sysdate where rno = #{rno}	
+		
+	</update>
+	
+	<select id="getListWithPaging" resultType = "com.spring.domain.Gr_ReplyVO">
+	<![CDATA[
+   select rno, gr_bno, reply, replyer, replydate, updatedate
+    from
+      (
+      select /*+ INDEX(gr_reply idx_reply) */
+      rownum rn, rno, gr_bno, reply, replyer, replyDate, updatedate
+   from gr_reply
+   where gr_bno = #{gr_bno}
+      and rno > 0
+      and rownum <= #{cri.pageNum} * #{cri.amount}
+   ) where rn > (#{cri.pageNum} -1) * #{cri.amount}
+   ]]>   
+		
+	</select>
+	
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+			select count(rno) from gr_reply where gr_bno = #{gr_bno}
+		]]>
+	</select>
+	
+	
+	
+	
+
+</mapper>

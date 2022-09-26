@@ -89,9 +89,10 @@
 	<tr><th>물품등록일</th><td>${read.regdate}</td></tr>
 	<tr><th>글 내용</th><td>${read.pd_content}</td></tr>
 	<tr><th>가격</th><td>${read.price}</td></tr>
-	<button type="button" onclick="fn_buy()">결제하기</button>
 	
 	</table>
+	<button type="button" onclick="fn_buy()">결제하기</button>
+	<a href="orderlist">주문내역</a>
 	<p>사용자이름 : <sec:authentication property="principal.user.USER_NICKNAME" /> </p>
 <button type="submit" onclick="location.href='/pdregist/list'" formmethod="get">목록</button>
 

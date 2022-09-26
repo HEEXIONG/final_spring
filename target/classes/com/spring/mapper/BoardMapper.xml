@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.mapper.BoardMapper">
+
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							gr_title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							gr_content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							gr_writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>  
+
+	<select id="getListWithPaging" resultType="com.spring.domain.BoardVO">
+	 <![CDATA[
+	SELECT 
+		GR_BNO, GR_TITLE, GR_CONTENT, GR_WRITER, REGDATE, UPDATEDATE
+	FROM (
+			SELECT /*+ INDEX_DESC(tbl_group pk_board) */
+			ROWNUM RN, GR_BNO, GR_TITLE, GR_CONTENT, GR_WRITER, REGDATE, UPDATEDATE
+			FROM tbl_group
+			WHERE
+	]]>
+	
+	<include refid="criteria"></include>
+	
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount}
+			)
+		where rn > (#{pageNum} -1) * #{amount} 
+		]]>
+	</select>	
+		
+	<select id="getList" resultType="com.spring.domain.BoardVO">
+	<![CDATA[
+		SELECT * FROM tbl_group WHERE gr_bno > 0
+	]]>
+	</select>
+	
+	<insert id="insert">
+		insert into tbl_group(gr_bno, gr_title, gr_content, gr_writer)  values(seq_group.nextval, #{gr_title}, #{gr_content}, #{gr_writer})	
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="gr_bno" order="BEFORE" resultType="long">
+			select seq_group.nextval from dual		
+		</selectKey>
+		insert into tbl_group (gr_bno, gr_title, gr_content, gr_writer) values(#{gr_bno}, #{gr_title}, #{gr_content}, #{gr_writer})	
+	</insert>   
+	
+	<select id="read" resultType="com.spring.domain.BoardVO">
+		select * from tbl_group where gr_bno = #{gr_bno}
+	</select>
+	
+	<delete id="delete">
+		delete from tbl_group where gr_bno = #{gr_bno}		
+	</delete>	
+	
+	<update id="update">
+		update tbl_group set gr_title = #{gr_title}, gr_content = #{gr_content}, gr_writer = #{gr_writer}, updateDate = sysdate where gr_bno = #{gr_bno}	
+	</update>
+	
+	  
+	 <select id="getTotalCount" resultType="int">
+	 select count(*) from tbl_group
+	 where
+	 <include refid="criteria"></include>
+	 
+	 gr_bno > 0
+	 
+	 </select>
+	 
+	 <update id="updateReplyCnt">
+	 	update tbl_group set replycnt = replycnt + #{amount} where gr_bno = #{gr_bno}
+	 </update>
+	  
+</mapper>
