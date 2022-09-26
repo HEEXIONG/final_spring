@@ -11,10 +11,7 @@ public class UsersServiceImpl implements UsersService {
 	@Autowired
 	UsersMapper mapper;
 	
-	@Override
-	public UsersVO userLogin(UsersVO vo) {
-		return mapper.userLogin(vo);
-	}
+	
 
 	@Override
 	public void userInsert(UsersVO vo) {
@@ -41,6 +38,16 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public int nickCheck(String USER_NICKNAME) {
 		return mapper.nickCheck(USER_NICKNAME);
+	}
+
+
+
+
+
+	@Override
+	public UsersVO userLogin(UsersVO vo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

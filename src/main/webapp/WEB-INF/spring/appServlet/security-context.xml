@@ -22,7 +22,7 @@
 	
 	<security:access-denied-handler ref="customAccessDenied"/>
 	<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
-	
+	<security:csrf disabled="true"/>
 	</security:http>
 	
 	

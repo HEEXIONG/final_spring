@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.Pd_ReplyMapper">
+
+	<insert id="insert">
+		
+		insert into tbl_comments (rno, pd_code, reply, replyer)
+		values (seq_comments.nextval, #{pd_code}, #{reply}, #{replyer})
+		
+	</insert>
+	
+	<select id="read" resultType="com.spring.domain.Pd_ReplyVO">
+		
+		select * from tbl_comments where rno = #{rno}
+		
+	</select>
+	
+	<delete id="delete">
+		
+		delete from tbl_comments where rno = #{rno}
+		
+	</delete>
+	
+	<update id="update">
+	
+		update tbl_comments set reply = #{reply}, updatedate = sysdate where rno = #{rno}	
+		
+	</update>
+	
+	<select id="getListWithPaging" resultType = "com.spring.domain.Pd_ReplyVO">
+	<![CDATA[
+   select rno, pd_code, reply, replyer, replydate, updatedate
+    from
+      (
+      select /*+ INDEX(tbl_comments idx_reply) */
+      rownum rn, rno, pd_code, reply, replyer, replyDate, updatedate
+   from tbl_comments
+   where pd_code = #{pd_code}
+      and rno > 0
+      and rownum <= #{cri.pageNum} * #{cri.amount}
+   ) where rn > (#{cri.pageNum} -1) * #{cri.amount}
+   ]]>   
+		
+	</select>
+	
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+			select count(rno) from tbl_comments where pd_code = #{pd_code}
+		]]>
+	</select>
+	
+	
+	
+	
+
+</mapper>
