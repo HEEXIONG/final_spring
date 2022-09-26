@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.spring.mapper.MypageMapper">
+  	
+	<select id="getList" resultType="com.spring.domain.MypageVO">
+	   SELECT * FROM USERS WHERE USER_ID = #{userId}
+  	</select>
+  	
+  	<select id="getList2" resultType="com.spring.domain.MypageVO">
+	   SELECT * FROM USERS 
+	   WHERE 
+	   USER_NO = #{user_no}
+  	</select>
+  	
+ 	<select id="mypageIdChk" resultType="com.spring.domain.MypageVO">
+  		SELECT * FROM TB_COM_USER WHERE USER_ID = #{userId}
+  	</select>
+  	
+  	<select id="getList3" resultType="com.spring.domain.MypageVO">
+	   SELECT * FROM USERS WHERE USER_ID = #{userId}
+  	</select>
+  	
+  	<insert id="insert" parameterType="com.spring.domain.MypageVO">
+	  	INSERT INTO TB_COM_USER(
+			USER_NO,
+			USER_ID
+		)VALUES(
+			#{user_no},
+			#{USER_ID}
+		)
+  	</insert>
+  	
+  	<update id="update" parameterType="com.spring.domain.MypageVO">
+	  	UPDATE 
+	  		USERS
+	  	SET
+	  		USER_ID = #{USER_ID},
+	  		USER_NICKNAME = #{USER_NICKNAME},
+	  		USER_PHONE = #{USER_PHONE},
+	  		USER_EMAIL = #{USER_EMAIL}
+	  	WHERE
+	  		USER_NO = #{user_no}
+  	</update>
+  	
+  	<update id="user_update" parameterType="com.spring.domain.MypageVO">
+  		UPDATE
+  			USERS
+  		SET
+  			USER_ID = #{USER_ID}
+  		WHERE
+  			USER_NO = #{user_no}
+  	</update>
+  	<update id="auth_update" parameterType="com.spring.domain.MypageVO">
+  		UPDATE 
+  			AUTHORITIES 
+  		SET
+  			USERID = #{USER_ID} 
+  		WHERE 
+  			USERID = #{USER_ID}
+  	</update>
+  	<delete id="delete">
+  		DELETE FROM TB_CART
+  		WHERE CART_CODE = 'AAA'
+  	</delete>
+  	
+  </mapper>
