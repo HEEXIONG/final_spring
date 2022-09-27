@@ -51,11 +51,7 @@ public class UsersController {
 	
 	@Autowired
 	private BCryptPasswordEncoder pwEncoder;
-<<<<<<< HEAD
-	
-	
-	
-=======
+
 	//===============================================================
 
 
@@ -66,7 +62,7 @@ public class UsersController {
 		log.info("info");
 	}
 	//회원가입페이지(post)
->>>>>>> refs/remotes/origin/Sung
+
 	@PostMapping("/insert")
 	public String insertpost(UsersVO uservo) {
 		
@@ -89,11 +85,7 @@ public class UsersController {
 	
 	
 
-	@GetMapping("/insert")
-	public void insertget() {
-		log.warn("회원가입 페이지");
-		log.info("info");
-	}
+	
 	
 	@GetMapping("/display")      
 	                             //파일경로 + 파일이름을 전달받아야하기 String타입으로
@@ -234,10 +226,7 @@ public class UsersController {
 	@PostMapping("/userIdChk")
 	@ResponseBody
 	public String userIdChk(String userId) {
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/Sung
+
 		int result = userserivce.idCheck(userId);
 		if(result != 0) {
 			return "fail";
