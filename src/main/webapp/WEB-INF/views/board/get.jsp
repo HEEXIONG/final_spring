@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 	<div class="row">
   <div class="col-lg-12">
     <h1 class="page-header" align="center">공지 사항</h1>
@@ -46,7 +47,7 @@
              readonly="readonly">
         </div>
 
-<button data-oper='list' class="btn btn-outline-light" onclick="location.href='list'">List</button>
+<button data-oper='list' class="btn btn-outline-light" onclick="location.href='list'" style="color: black !important;">List</button>
 
 <!-- page 317 jsp 소스 코딩 시작 : Page345 조회 페이지에서 검색 처리 jsp 소스 추가 코딩 시작 -->
 <form id='operForm' action="/board/list" method="get">
@@ -66,4 +67,5 @@
 </div>
 <!-- /.row -->
 </body>
+<jsp:include page="../footer.jsp"></jsp:include>
 </html>

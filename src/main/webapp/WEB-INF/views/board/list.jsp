@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 <div class="row" align="center">
 	<div class="col-lg-12">
 		<h1 class="page-header" onclick="location.href='list'">공지사항</h1>
@@ -25,7 +26,7 @@
 				<!-- Page 237 소스 코딩 시작 -->
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
-						<tr class="table-primary">
+						<tr class="table-dark">
 							<th scope="row">게시글 번호</th>
 							<th>제목</th>
 							<th>작성자</th>
@@ -33,7 +34,7 @@
 						</tr>
 					</thead>
 					<c:forEach items="${list}" var="board">
-						<tr class="table-primary">
+						<tr class="table-dark">
 							<td><c:out value="${board.nbno}" /></td>
 							<td><a class='move' href='<c:out value="${board.nbno}"/>'>
 									<c:out value="${board.ntitle}" />
@@ -56,7 +57,7 @@
 							<input type="text" class="form-control" id="inputDefault" name="keyword" value="<c:out value = "${pageMaker.cri.keyword}"/>" />						
 							<input type="hidden" name="pageNum" value="<c:out value = "${pageMaker.cri.pageNum}"/>" />
 							<input type="hidden" name="amount" value="<c:out value = "${pageMaker.cri.amount}"/>" />
-							<button class="btn btn-primary">Search Now!</button>
+							<button class="btn btn-outline-light" style="color: black !important;">Search Now!</button>
 						</form>
 					</div>
 				</div>
@@ -81,7 +82,7 @@
 					</div>
 				</div>
 			</div>
-			
+			<jsp:include page="../footer.jsp"></jsp:include>
 			<form id='actionForm' action="/board/list" method='get'>
 				<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
 				<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
