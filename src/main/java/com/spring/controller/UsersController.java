@@ -51,13 +51,7 @@ public class UsersController {
 	
 	@Autowired
 	private BCryptPasswordEncoder pwEncoder;
-<<<<<<< HEAD
 
-	//===============================================================
-=======
->>>>>>> refs/heads/master
-
-<<<<<<< HEAD
 
 	//회원가입페이지(get)
 	@GetMapping("/insert")
@@ -67,8 +61,7 @@ public class UsersController {
 	}
 	//회원가입페이지(post)
 
-=======
->>>>>>> refs/heads/master
+
 	@PostMapping("/insert")
 	public String insertpost(UsersVO uservo) {
 		
@@ -232,10 +225,7 @@ public class UsersController {
 	@PostMapping("/userIdChk")
 	@ResponseBody
 	public String userIdChk(String userId) {
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/heads/master
 		int result = userserivce.idCheck(userId);
 		if(result != 0) {
 			return "fail";
