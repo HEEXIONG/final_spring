@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.domain.CartVO;
-import com.spring.domain.Criteria;
-import com.spring.domain.QnaVO;
 import com.spring.mapper.CartMapper;
-import com.spring.mapper.QnaMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -18,12 +15,17 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class CartServiceImpl implements CartService{
 
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	private CartMapper mapper;
 	
 	@Override
-	public List<CartVO> getList() {
-		return mapper.getList();
+	public List<CartVO> getList(int userNo) {
+		return mapper.getList(userNo);
+	}
+	
+	@Override
+	public List<CartVO> getList2(CartVO vo){
+		return mapper.getList2(vo);
 	}
 	
 	@Override
@@ -32,8 +34,8 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	@Override
-	public int update() {
-		return mapper.update();
+	public int updateCart(CartVO vo) {
+		return mapper.updateCart(vo);
 	}
 	
 	@Override

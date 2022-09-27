@@ -44,9 +44,51 @@
 <script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="/resources/elesco/plugins/easing/easing.js"></script>
 <script src="/resources/elesco/js/custom.js"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script> -->
+<!-- <SCRIPT SRC="HTTPS://MAPS.GOOGLEAPIS.COM/MAPS/API/JS?V=3.EXP&KEY=AIZASYCIWF204LFZG1Y4KPSIHKAHEXMLYXXUMHA"></SCRIPT> -->
 <script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="/resources/elesco/js/contact_custom.js"></script>
+<!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "2b7df929-35a8-43dc-9292-2312922bf727"
+  });
+</script>
+<!-- End Channel Plugin -->
 </body>
 
 </html>

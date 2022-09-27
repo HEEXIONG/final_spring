@@ -14,41 +14,33 @@
 	        (SELECT FILENAME FROM PD_IMAGE WHERE pd_image.pd_code = B.pd_code) AS PD_IMAGE,
 	        B.ADMIN AS ADMIN,
 	        B.PRICE AS PRICE,
-	        (SELECT PAY_AMOUNT FROM pay_import WHERE pay_import.pay_id = B.pd_code) AS PD_AMOUNT,
-	        B.PRICE * (SELECT PAY_AMOUNT FROM pay_import WHERE pay_import.pay_id = B.pd_code) AS PD_TOTALPRICE
+	        A.CART_COUNT AS PD_AMOUNT,
+	        B.PRICE * A.CART_COUNT AS PD_TOTALPRICE
 	    FROM TB_CART A JOIN pd_regist B ON A.PD_CODE = b.pd_code
+	    WHERE USER_NO = #{userNo}
   	</select>
   	
-  	<insert id="insert">
-	  	INSERT INTO TB_CART(
-			CART_CODE,
-			PD_CODE,
-			USER_NO,
-			PRICE,
-			CART_PRICE,
-			CART_COUNT
-		)VALUES(
-			'AAAAAA',
-			1234,
-			1234,
-			1234,
-			1234,
-			1234
-		)
-  	</insert>
-  	
-  	<update id="update">
+  	<select id="getList2" resultType="com.spring.domain.CartVO">
+	    SELECT
+	        A.CART_CODE AS CART_CODE,
+	        B.PD_CODE AS PD_CODE,
+	        B.PD_TITLE AS PD_TITLE,
+	        B.PD_CONTENT AS PD_CONTENT,
+	        (SELECT FILENAME FROM PD_IMAGE WHERE pd_image.pd_code = B.pd_code) AS PD_IMAGE,
+	        B.ADMIN AS ADMIN,
+	        B.PRICE AS PRICE,
+	        A.CART_COUNT AS PD_AMOUNT,
+	        B.PRICE * A.CART_COUNT AS PD_TOTALPRICE
+	    FROM TB_CART A JOIN pd_regist B ON A.PD_CODE = b.pd_code
+	    WHERE USER_NO = #{userNo}
+  	</select>
+  	<update id="updateCart" parameterType="com.spring.domain.CartVO">
 	  	UPDATE 
 	  		TB_CART
 		SET
-		    CART_CODE = 'AAAA',
-		    PD_CODE = 0,
-		    USER_NO = 26,
-		    PRICE = 0,
-		    CART_PRICE = 0,
-		    CART_COUNT = 0
+		    CART_COUNT = #{CART_COUNT}
 		WHERE
-		    CART_CODE = 'AAA'
+		    CART_CODE = #{CART_CODE}
   	</update>
   	
   	<delete id="delete">
