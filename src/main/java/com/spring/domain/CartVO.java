@@ -14,6 +14,7 @@ public class CartVO {
 	private Date updatedate;
 	
 	private String CART_CODE;
+	private String CART_CODE2;
 	private int PD_CODE;
 	private String PD_TITLE;
 	private String PD_CONTENT;
@@ -21,10 +22,12 @@ public class CartVO {
 	private String ADMIN;
 	private int  PD_AMOUNT;
 	private String PD_TOTALPRICE;
-	private int USER_NO;
+	private int userNo;
 	private int PRICE;
 	private int CART_PRICE;
+	private int CART_PRICE2;
 	private int CART_COUNT;
+	private int CART_TOTALPRICE;
 }
 //코드 가독성 향상 lombok 라이브러리 활용 코드 가독성 향상~
 

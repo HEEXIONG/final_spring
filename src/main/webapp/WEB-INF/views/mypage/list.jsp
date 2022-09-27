@@ -14,11 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 <div class="py-5 text-center">
       <h2>my page</h2>
     </div>
 
-    <div class="row g-5">
+    <div class="row g-5" style="margin-top:5%;margin-left:10%;margin-bottom:5%;width:80%">
       <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-primary">Your cart</span>
@@ -114,11 +115,10 @@
 	            </div>
 	            
 	            <div class="col-12">
-				  <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="execution_daum_address()">주소찾기</button>
+				  <button class="w-100 btn btn-primary btn-lg" type="button" onclick="execution_daum_address()">주소찾기</button>
 	            </div>
 	            
 	            <div class="col-12">
-	              
 	              <div class="col-sm-3">
 	              <label for="address" class="form-label USER_POST" >addr_num</label>
 	              	<input type="text" class="form-control USER_ADDR1" id="USER_POST"  name = "USER_POST" placeholder="addr_num" value='<c:out value="${MypageVO.USER_POST}"/>'>
@@ -147,6 +147,7 @@
         </form>
       </div>
     </div>
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
@@ -276,20 +277,20 @@
 
 	             // 우편번호와 주소 정보를 해당 필드에 넣는다.
 	             //document.getElementById('sample6_postcode').value = data.zonecode;
-	             $(".USER_POST").val(data.zonecode);
+	             $("#USER_POST").val(data.zonecode);
 	            // document.getElementById("sample6_address").value = addr;
-	             $(".USER_ADDR1").val(addr)
+	             $("#address").val(addr)
 	             // 커서를 상세주소 필드로 이동한다.
 	            // document.getElementById("sample6_detailAddress").focus();
-	             $(".USER_ADDR2").attr("readonly",false);
-	             $(".USER_ADDR2").focus();
+	             $("#address2").attr("readonly",false);
+	             $("#address2").focus();
 	         }
 	     }).open();
 	    
 	}
 </script>
 
-
+   <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 
 </body>
 </html>
