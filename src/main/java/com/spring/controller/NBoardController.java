@@ -34,4 +34,9 @@ public class NBoardController {
 	public void get(@RequestParam("nbno") Long nbno, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("board", nservice.get(nbno));
 	}
+	
+	@GetMapping("/faq")
+	public String faq(){
+		return "/board/faq";
+	}
 }
