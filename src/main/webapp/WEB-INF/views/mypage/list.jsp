@@ -157,9 +157,11 @@
 	user_no*=1;
 	var test = "test";
 	var user_overlap = 0;
-	/* $("#USER_ID").keydown(function(e) {
+	$("#USER_ID").keydown(function(e) {
 		
-		$.ajax({
+		/* alert($("#USER_ID").val() + String.fromCharCode(e.keyCode).toLowerCase());
+		console.log(e.keyCode); */
+		/* $.ajax({
 		      url: '/mypage/list2',
 		      data: {userId :$("#USER_ID").val()} ,
 		      type: 'post',
@@ -183,8 +185,8 @@
 			$("#id_feedback").css("color","black");
 			$("#id_feedback").text("id no save gogo");
 		}
-		user_overlap = 0;
-    }); */
+		user_overlap = 0; */
+    });
 	
 	function returnList(url,formData){
 		$.ajax({
@@ -218,10 +220,6 @@
 			      data: formData ,
 			      type: 'post',
 			      dataType:'json',
-			      beforeSend : function(xhr)
-			        {   
-			            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-			        },
 			      success: function(data){
 			    	  console.log("AAA")
 			          console.log(data); 
