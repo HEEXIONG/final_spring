@@ -101,8 +101,14 @@
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="menu_selection">
-						<li><a href="/customLogin1"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<sec:authorize access="isAnonymous()">
+						<li><a href="/customLogin1"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
 						<li><a href="/users/insert"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+						</sec:authorize>
+						 <sec:authorize access="isAuthenticated()">
+						 <li><a href="/customLogout"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></li>
+						 </sec:authorize>
+						
 					</ul>
 				</li>
 				<li class="menu_item"><a href="/main">home</a></li>
