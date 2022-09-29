@@ -19,6 +19,10 @@ public class CommonController {
 		log.info("contact");
 	}
 	
+	@GetMapping("/detail")
+	public void detail() {
+		log.info("detail");
+	}
 	
 	
 	@GetMapping("/accessError")

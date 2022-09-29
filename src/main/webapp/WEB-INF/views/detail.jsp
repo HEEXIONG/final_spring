@@ -4,12 +4,12 @@
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<title>Elesco</title>
+<title>Single Product</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Elesco">
+<meta name="description" content="Colo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/resources/elesco/styles/bootstrap4/bootstrap.min.css">
 <link href="/resources/elesco/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -18,10 +18,8 @@
 <link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" href="/resources/elesco/plugins/themify-icons/themify-icons.css">
 <link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/contact_styles.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/contact_responsive.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/single_styles.css">
+<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/single_responsive.css">
 </head>
 
 <body>
@@ -31,12 +29,7 @@
 	<!-- Header -->
 
 	<header class="header trans_300">
-
-		<!-- Top Navigation -->
-
-		
-
-		<!-- Main Navigation -->
+<!-- Main Navigation -->
 
 		<div class="main_nav_container">
 			<div class="container">
@@ -118,3 +111,111 @@
 			</ul>
 		</div>
 	</div>
+	<div class="container single_product_container">
+		<div class="row">
+			<div class="col">
+
+				<!-- Breadcrumbs -->
+
+				<div class="breadcrumbs d-flex flex-row align-items-center">
+					<ul>
+						<li><a href="/main">Elesco</a></li>
+						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="single_product_pics">
+					<div class="row">
+						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+							<!--<div class="single_product_thumbnails">
+								<ul>
+									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
+									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
+									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
+								</ul>
+							</div>-->
+						</div>
+						<div class="col-lg-9 image_col order-lg-2 order-1">
+							<div class="single_product_image">
+								<div class="single_product_image_background" style="background-image:url(resources/elesco/images/pd1.jpg)"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="product_details">
+					<div class="product_details_title">
+						<h2>Pocket cotton sweatshirt</h2>
+						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+					</div>
+					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+						<span class="ti-truck"></span><span>free delivery</span>
+					</div>
+					<div class="product_price">$495.00</div>
+					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+					<div class="product_color">
+						
+					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<ul class="footer_nav">
+							<li><a href="#">Blog</a></li>
+							<li><a href="/board/faq">FAQs</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer_nav_container">
+						<div class="cr">©2022 All Rights Reserverd. Made with Elesco</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+<script src="/resources/elesco/js/jquery-3.2.1.min.js"></script>
+<script src="/resources/elesco/styles/bootstrap4/popper.js"></script>
+<script src="/resources/elesco/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="/resources/elesco/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="/resources/elesco/plugins/easing/easing.js"></script>
+<script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="/resources/elesco/js/single_custom.js"></script>
+</body>
+
+</html>
