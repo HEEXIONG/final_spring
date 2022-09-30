@@ -21,8 +21,8 @@ public class PdServiceImpl implements PdService {
 	
 		// 특정 글 조회 작업의 기능 구현
 		@Override
-		public PdVo read(Long pd_code) {
-			return pdmapper.read(pd_code);
+		public PdVo read(Long pdcode) {
+			return pdmapper.read(pdcode);
 		}
 		
 		// 목록(리스트) 작업의 기능 구현

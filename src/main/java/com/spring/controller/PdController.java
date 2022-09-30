@@ -1,14 +1,16 @@
 package com.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.spring.domain.FileVO;
 import com.spring.domain.PdVo;
+import com.spring.service.FileService;
 import com.spring.service.PdService;
 
 import lombok.AllArgsConstructor;
@@ -22,24 +24,28 @@ public class PdController {
 	
 	@Autowired
 	private PdService pdservice;
+	
+    @Autowired
+    private FileService mFileService;
 
 	/*
 	 * // 게시글 상세내용 불러오기
-	 * 
 	 * @RequestMapping("/read") public void read(Model model) throws Exception {
 	 * log.info("pd 게시판 상세보기"); model.addAttribute("read", pdservice.read()); //
 	 * model에 데이터 값을 담는다 }
 	 */
     
     @GetMapping("/read")
-    public void GetPageGET(Long pd_code, Model model) throws Exception {
-    	log.info("pd 게시판 상세보기");
-        model.addAttribute("read", pdservice.read(pd_code));
+    public void GetPageGET(Long pdcode, Model model,FileVO filevo) throws Exception {
+    	model.addAttribute("filelist", mFileService.fileread(pdcode));
+    	model.addAttribute("read", pdservice.read(pdcode));
     }
 	
    @RequestMapping("/list")
-   public void ListGET(Model model) {
-        log.info("pd 게시판 목록 페이지 불러오기");
+   public void ListGET(Model model, PdVo pdboard,FileVO filevo) {
+	   List<PdVo> pdlist = pdservice.getList();
+	   List<FileVO> filelist = mFileService.getfileList();
+	    model.addAttribute("filelist", filelist);
         model.addAttribute("list", pdservice.getList());
     }
 

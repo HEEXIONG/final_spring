@@ -7,18 +7,21 @@ import lombok.Data;
 @Data
 public class PdVo {
 
-	private Long pd_code;
+	private Long pdcode;
 	
-	private String pd_title;
+	private String title;
 	
 	private String admin;
 
-	private String pd_content;
+	private String content;
 	
 	private Date regdate;
 	
 	private Long price;
 	
-	private int replyCnt;
+	private String filename;
 	
+	private String amount;
+	
+	private int replyCnt;
 }

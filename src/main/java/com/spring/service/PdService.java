@@ -13,6 +13,6 @@ public interface PdService {
 		public List<PdVo> getList();
 		
 	// 특정게시물 정보
-		public PdVo read(Long pd_code) throws Exception;
+		public PdVo read(Long pdcode) throws Exception;
 	
 }

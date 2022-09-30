@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="/main">Eles<span style="color: #a39292">co</span></a>
+							<a href="/main">Elesco<span style="color: #a39292">co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
@@ -162,9 +162,6 @@
 					<div class="product_color">
 						
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-						
-						
-						
 					</div>
 				</div>
 			</div>
