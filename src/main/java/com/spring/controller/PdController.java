@@ -37,15 +37,12 @@ public class PdController {
     
     @GetMapping("/read")
     public void GetPageGET(Long pdcode, Model model,FileVO filevo) throws Exception {
-    	model.addAttribute("filelist", mFileService.fileread(pdcode));
     	model.addAttribute("read", pdservice.read(pdcode));
     }
 	
    @RequestMapping("/list")
    public void ListGET(Model model, PdVo pdboard,FileVO filevo) {
 	   List<PdVo> pdlist = pdservice.getList();
-	   List<FileVO> filelist = mFileService.getfileList();
-	    model.addAttribute("filelist", filelist);
         model.addAttribute("list", pdservice.getList());
     }
 

@@ -97,7 +97,6 @@
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 						<!-- Product 1 -->
-
 						<div class="product-item men">
 							<div class="product discount product_filter">
 								<div class="product_image">
