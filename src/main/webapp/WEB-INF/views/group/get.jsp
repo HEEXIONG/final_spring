@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>${board.gr_title} 상품 후기</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,6 @@
 </head>
 
 <body>
-
     <div id="wrapper">
 
         <div id="page-wrapper">
@@ -50,7 +49,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Board Read</h1>
+    <h1 class="page-header">상품 후기</h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -60,35 +59,35 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
 
-      <div class="panel-heading">Board Read Page</div>
+      <div class="panel-heading">상품 후기를 남겨주세요</div>
       <!-- /.panel-heading -->
       <div class="panel-body">
 
           <div class="form-group">
-          <label>Bno</label> <input class="form-control" name='bno'
+          <label>번호</label> <input class="form-control" name='bno'
              value='<c:out value="${board.gr_bno}" />' readonly="readonly">
         </div>
 
         <div class="form-group">
-          <label>Title</label> <input class="form-control" name='title'
+          <label>제목</label> <input class="form-control" name='title'
              value='<c:out value="${board.gr_title}" />' readonly="readonly">
         </div>
 
         <div class="form-group">
-          <label>Text area</label>
+          <label>내용</label>
           <textarea class="form-control" rows="3" name='content'
             readonly="readonly"><c:out value="${board.gr_content}" /></textarea>
         </div>
 
         <div class="form-group">
-          <label>Writer</label> <input class="form-control" name='writer' value='<c:out value="${board.gr_writer}" />'
+          <label>작성자</label> <input class="form-control" name='writer' value='<c:out value="${board.gr_writer}" />'
              readonly="readonly">
         </div>
 
 
-<button data-oper='modify' class="btn btn-default" onclick="location.href='/group/modify?bno=<c:out value="${board.gr_bno}" /> '">Modify 수정!</button>
+<button data-oper='modify' class="btn btn-default" onclick="location.href='/group/modify?bno=<c:out value="${board.gr_bno}" /> '">수정하기</button>
 
-<button data-oper='list' class="btn btn-info" onclick="location.href='/group/list'">List 보여주세요!</button>
+<button data-oper='list' class="btn btn-info" onclick="location.href='/group/list'">돌아가기</button>
 
 <!-- page 317 jsp 소스 코딩 시작 : Page345 조회 페이지에서 검색 처리 jsp 소스 추가 코딩 시작 -->
 <form id='operForm' action="/group/modify" method="get">
@@ -181,7 +180,7 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
 
-      <div class="panel-heading">Files</div>
+      <div class="panel-heading">파일</div>
       <!-- /.panel-heading -->
       <div class="panel-body">
         
@@ -202,8 +201,8 @@
       	 <!-- Page 419 댓글 목록 상단 오른쪽에 버튼을 하나 추가해서
       	            사용자들이 새로운 댓글을 추가할 수 있도록 준비합니다. -->
       	      <div class="panel-heading">
-      	      	<i class="fa fa-comments fa-fw"></i> Reply!!!
-      	      		<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply!!!</button>
+      	      	<i class="fa fa-comments fa-fw"></i> 댓글
+      	      		<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">댓글 달기</button>
       	      </div>
       	            	 
       
@@ -253,11 +252,11 @@
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <label>Reply</label> 
+                <label>댓글 내용</label> 
                 <input class="form-control" name='reply' value='New Reply!!!!'>
               </div>      
               <div class="form-group">
-                <label>Replyer</label> 
+                <label>댓글 작성자</label> 
                 <input class="form-control" name='replyer' value='replyer'>
               </div>
               <div class="form-group">
@@ -267,10 +266,10 @@
       
             </div>
 <div class="modal-footer">
-        <button id='modalModBtn' type="button" class="btn btn-warning">Modify</button>
-        <button id='modalRemoveBtn' type="button" class="btn btn-danger">Remove</button>
-        <button id='modalRegisterBtn' type="button" class="btn btn-primary">Register</button>
-        <button id='modalCloseBtn' type="button" class="btn btn-default">Close</button>
+        <button id='modalModBtn' type="button" class="btn btn-warning">수정하기</button>
+        <button id='modalRemoveBtn' type="button" class="btn btn-danger">삭제하기</button>
+        <button id='modalRegisterBtn' type="button" class="btn btn-primary">등록하기</button>
+        <button id='modalCloseBtn' type="button" class="btn btn-default">닫기</button>
       </div>          </div>
           <!-- /.modal-content -->
         </div>

@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>${board.gr_title} 수정</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
         
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Board Modify</h1>
+    <h1 class="page-header">글 수정하기</h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -60,7 +60,7 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
 
-      <div class="panel-heading">Board Modify Page</div>
+      <div class="panel-heading">글 수정 페이지</div>
       <!-- /.panel-heading -->
       <div class="panel-body">
 
@@ -77,45 +77,45 @@
       <!-- Page346 수정/삭제 페이지에서 검색 처리 소스 추가 코딩 끝 -->
       
 		<div class="form-group">
-		  <label>Bno</label> 
+		  <label>번호</label> 
 		  <input class="form-control" name='gr_bno' 
 		  value='<c:out value="${board.gr_bno}" />' readonly="readonly">
 		</div>
 
 		<div class="form-group">
-		  <label>Title</label> 
+		  <label>제목</label> 
 		  <input class="form-control" name='gr_title'
 		  value='<c:out value="${board.gr_title}" />' >
 		</div>
 
 		<div class="form-group">
-		  <label>Text area</label>		  
+		  <label>내용</label>		  
 		  <textarea class="form-control" rows="3" name='gr_content' >
 		  	<c:out value="${board.gr_content}" />
 		  </textarea>
 		</div>
 
 		<div class="form-group">
-		  <label>Writer</label> 
+		  <label>작성자</label> 
 		  <input class="form-control" name='gr_writer'
 	   value='<c:out value="${board.gr_writer}" />'  readonly="readonly">            
 		</div>
 
 		<div class="form-group">
-		  <label>RegDate</label> 
+		  <label>작성일자</label> 
 		  <input class="form-control" name='regDate'
 		  value="<fmt:formatDate pattern="yyyy/MM/dd"  value="${board.regdate}" />"    readonly="readonly">            
 		</div>
 
 		<div class="form-group">
-		  <label>Update Date</label> 
+		  <label>수정일자</label> 
 		  <input class="form-control" name='updateDate'
 		  value="<fmt:formatDate pattern="yyyy/MM/dd"  value="${board.updateDate}" />"      readonly="readonly">            
 		</div>
 
-  <button type="submit" data-oper='modify' class="btn btn-default">Modify</button>
-  <button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>
-  <button type="submit" data-oper='list' class="btn btn-info">List</button>
+  <button type="submit" data-oper='modify' class="btn btn-default">수정하기</button>
+  <button type="submit" data-oper='remove' class="btn btn-danger">삭제하기</button>
+  <button type="submit" data-oper='list' class="btn btn-info">돌아가기</button>
 </form>
 
 

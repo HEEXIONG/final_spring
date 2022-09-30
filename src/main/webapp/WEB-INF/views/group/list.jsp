@@ -6,58 +6,40 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <title>상품 후기</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- DataTables CSS -->
-    <link href="/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
+    
+    <style type="text/css">
+    #regBtn{
+    	background-color: #337ab7;
+    	color: #fff;
+    
+    }
+    
+    </style>
 
 </head>
 
 <body>
-
-    <div id="wrapper">
+	
+	<jsp:include page="../header.jsp"></jsp:include>
 
         <div id="page-wrapper">
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="container-fluid">
 
-
-<div class="row">
+<div class="col-lg-8" style="float: none; margin:0 auto;">
 	<div class="col-lg-12">
-		<h1 class="page-header">Tables</h1>
+		<h1 class="page-header">상품 후기</h1>
 	</div>
-	<!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
+
+
 
 <div class="row">
 	<div class="col-lg-12">
@@ -65,9 +47,8 @@
 			
 			<!-- Page250 위에 jsp 소스 코딩 시작 -->
 			<div class="panel-heading">
-				Board List Page
-				<button id='regBtn' type="button" class="btn btn-xs pull-right">Register
-					New Board</button>
+				상품 후기를 남겨주세요
+				<button id='regBtn' type="button" class="btn btn-xs pull-right" >글 쓰기</button>
 			</div>
 			<!-- Page250 위에 jsp 소스 코딩 끝 -->
 			<!-- 목록 페이지 상단에 게시판 등록 작업 버튼 생성해 줌 -->
@@ -77,11 +58,11 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>#번호</th>
+							<th><span>No.1</span></th>
 							<th>제목</th>
 							<th>작성자</th>
-							<th>작성일</th>
-							<th>수정일</th>
+							<th>작성일자</th>
+							<th>수정일자</th>
 						</tr>
 					</thead>
 					<!-- Model에 담긴 데이터 출력 : '/board/list'를

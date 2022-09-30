@@ -51,7 +51,7 @@
 								<li><a href="#">shop</a></li>
 								<li><a href="#">notice</a></li>
 								<li><a href="/qna/list">Q&A</a></li>
-								<li><a href="#">Review</a></li>
+								<li><a href="/group/list">Review</a></li>
 								<li><a href="/contact">Contact</a></li>
 								 <sec:authorize access="isAnonymous()">
 								<li><a href="/customLogin1">Login</a></li>
