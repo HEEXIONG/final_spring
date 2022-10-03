@@ -37,23 +37,23 @@
 					<div class="product_slider_container">
 						<div class="owl-carousel owl-theme product_slider">
 							<!-- Slide 1 -->
-					<c:forEach var="PdVo" items="${list}">
 							<div class="owl-item product_slider_item">
 								<div class="product-item">
+					<c:forEach items="${list}" var="PdVo">
 									<div class="product discount">
 										<div class="product_image">
-											<img src="/resources/elesco/images/pd1.jpg" alt="" style="height: 220px">
+											<img src="C:\Users\aseph\git\Final_Boot2\src\main\resources\static\Upload\${PdVo.filename}" alt="" style="height: 220px">
 										</div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
 											<h6 class="product_name"><a href="single.html">${PdVo.pd_title}</a></h6>
-											<div class="product_price">$520.00<span>$590.00</span></div>
+											<div class="product_price">${PdVo.price}</div>
 										</div>
 									</div>
+					</c:forEach>
 								</div>
 							</div>
 						</div>
-					</c:forEach>
 						<!-- Slider Navigation -->
 
 						<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
@@ -95,9 +95,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
 						<!-- Product 1 -->
-
 						<div class="product-item men">
 							<div class="product discount product_filter">
 								<div class="product_image">
