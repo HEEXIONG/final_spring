@@ -27,7 +27,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.spring.controller" />
-
 	<!-- 스프링에서 데이터를 처리하기 위해MultipartResolver를 bean으로 등록 -->
 	<beans:bean id="multipartResolver"  class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></beans:bean>
 	<!-- <beans:bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></beans:bean> -->
