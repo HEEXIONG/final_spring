@@ -54,7 +54,7 @@ public class BoardController {
 	
 	@GetMapping(value = "/getAttachList", produces = {			
 			MediaType.APPLICATION_JSON_UTF8_VALUE})
-	@ResponseBody  // @ResponseBody를 적용해서 JSON 데이터를 반환하도록 처리합니다.
+	@ResponseBody 
 	public ResponseEntity<List<BoardAttachVO>> getAttachList(Long gr_bno){
 		log.info("getAttachList~!! " + gr_bno);
 		return new ResponseEntity<>(service.getAttachList(gr_bno), HttpStatus.OK);

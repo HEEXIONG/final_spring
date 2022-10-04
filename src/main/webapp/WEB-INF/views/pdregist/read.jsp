@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
-<html lang="ko">
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<!DOCTYPE html> 
+<html>
 <head>
-<title>Single Product</title>
+<title>글상세보기</title>
 
 <!-- jQuery -->
 <script type="text/javascript"
@@ -60,197 +60,68 @@
 	}
 </script>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Colo Shop Template">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/bootstrap4/bootstrap.min.css">
-<link href="/resources/elesco/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" href="/resources/elesco/plugins/themify-icons/themify-icons.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/single_styles.css">
-<link rel="stylesheet" type="text/css" href="/resources/elesco/styles/single_responsive.css">
+
+
+ <!-- Bootstrap Core CSS -->
+    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- MetisMenu CSS -->
+    <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body>
+     <table style="width: 50%; margin: auto;">
+	<tr><th>글 번호</th><td>${read.pd_code}</td></tr>
+	<tr><th>글 제목</th><td>${read.pd_title}</td></tr>
+	<tr><th>작성자</th><td>${read.admin}</td></tr><br>
+	<tr><th>물품등록일</th><td>${read.regdate}</td></tr>
+	<tr><th>글 내용</th><td>${read.pd_content}</td></tr>
+	<tr><th>가격</th><td>${read.price}</td></tr>
+	
+	</table>
+	<button type="button" onclick="fn_buy()">결제하기</button>
+	<a href="orderlist">주문내역</a>
+	<p>사용자이름 : <sec:authentication property="principal.user.USER_NICKNAME" /> </p>
+<button type="submit" onclick="location.href='/pdregist/list'" formmethod="get">목록</button>
 
-<div class="super_container">
-
-	<!-- Header -->
-
-	<header class="header trans_300">
-<!-- Main Navigation -->
-
-		<div class="main_nav_container">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-right">
-						<div class="logo_container">
-							<a href="/main">Eles<span style="color: #a39292">co</span></a>
-						</div>
-						<nav class="navbar">
-							<ul class="navbar_menu">
-								<li><a href="/main">home</a></li>
-								<li><a href="#">shop</a></li>
-								<li><a href="#">notice</a></li>
-								<li><a href="/qna/list">Q&A</a></li>
-								<li><a href="#">Review</a></li>
-								<li><a href="/contact">Contact</a></li>
-								 <sec:authorize access="isAnonymous()">
-								<li><a href="/customLogin1">Login</a></li>
-								</sec:authorize>
-								 <sec:authorize access="isAuthenticated()">
-								<li><a href="/customLogout">Logout</a></li>
-								</sec:authorize>
-								
-							</ul>
-							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<sec:authorize access="isAnonymous()">
-								<li><a href="/mypage/list"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								</sec:authorize>
-								<sec:authorize access="isAuthenticated()">
-								<li><a href="/mypage/list"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								</sec:authorize>
-								<sec:authorize access="isAnonymous()">
-								<li class="checkout"><a href="/customLogin1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-								</sec:authorize>
-								<sec:authorize access="isAuthenticated()">
-								<li class="checkout"><a href="/cart/list"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-								</sec:authorize>
-							</ul>
-							<div class="hamburger_container">
-								<i class="fa fa-bars" aria-hidden="true"></i>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</header>
-
-	<div class="fs_menu_overlay"></div>
-	<div class="hamburger_menu">
-		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-		<div class="hamburger_menu_content text-right">
-			<ul class="menu_top_nav">
-				
-				<li class="menu_item has-children">
-					<a href="#">
-						My Account
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<sec:authorize access="isAnonymous()">
-						<li><a href="/customLogin1"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
-						<li><a href="/users/insert"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-						</sec:authorize>
-						 <sec:authorize access="isAuthenticated()">
-						 <li><a href="/customLogout"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></li>
-						 </sec:authorize>
-					</ul>
-				</li>
-				<li class="menu_item"><a href="/main">home</a></li>
-				<li class="menu_item"><a href="#">shop</a></li>
-				<li class="menu_item"><a href="#">notice</a></li>
-				<li class="menu_item"><a href="/qna/list">Q&A</a></li>
-				<li class="menu_item"><a href="/contact">contact</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="container single_product_container">
-		<div class="row">
-			<div class="col">
-
-				<!-- Breadcrumbs -->
-
-				<div class="breadcrumbs d-flex flex-row align-items-center">
-					<ul>
-						<li><a href="/main">Elesco</a></li>
-						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li>
-					</ul>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-7">
-				<div class="single_product_pics">
-					<div class="row">
-						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-							<!--<div class="single_product_thumbnails">
-								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
-									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
-									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
-								</ul>
-							</div>-->
-						</div>
-						<div class="col-lg-9 image_col order-lg-2 order-1">
-							<div class="single_product_image">
-							<img src="/img/test.png">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-5">
-				<div class="product_details">
-					<div class="product_details_title">
-						<h2>${read.pd_title}</h2>
-						<p>${read.pd_content}</p>
-					</div>
-					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-					<span>${read.admin}</span>
-					</div>
-<<<<<<< HEAD
-					<div class="product_price"> 가격 : ${read.price} </div>
-					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-=======
-					<div class="product_price">가격 : ${read.price}</div>
-					<button class="red_button add_to_cart_button" style="color: #fff" type="button" onclick="fn_buy()">결제하기</button>
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
-					<div class="product_color">
-					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-					<div class="product_price">수량 : ${read.amount}</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div id="wrapper">
+<div id="wrapper">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <div id="page-wrapper">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      
      
       <div class='row'>
-  <div class="card mb-2">
-	<div class="card-header bg-light">
-	        <i class="fa fa-comment fa"></i> REPLY
-	</div>
-	<div class="card-body">
-		<ul class="list-group list-group-flush">
-		    <li class="list-group-item">
-			<div class="form-inline mb-2">
-				<label for="replyId"><i class="fa fa-user-circle-o fa-2x"></i></label>
-				<input type="text" class="form-control ml-2" placeholder="Enter yourId" id="replyId">
-				<label for="replyPassword" class="ml-4"><i class="fa fa-unlock-alt fa-2x"></i></label>
-				<input type="password" class="form-control ml-2" placeholder="Enter password" id="replyPassword">
-			</div>
-			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-			<button type="button" id="addReplyBtn" class="btn btn-dark mt-3">post reply</button>
-		    </li>
-		</ul>
-	</div>
-</div>
-
+  <div class="col-lg-12">    
+    <!-- /.panel -->
+    <div class="panel panel-default">
+    
+      	      <div class="panel-heading">
+      	      	<i class="fa fa-comments fa-fw"></i> Reply!!!
+      	      		<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply!!!</button>
+      	      </div>
+      	            	 
+      
+      	<!-- /.panel-heading -->
+      	<div class="panel-body">  
+      	    <ul class="chat">
+	        </ul>
+    	</div>
+    	<!-- /.panel .chat-panel -->
+	      	     <div class="panel-footer"></div>
+     	</div>	
+  </div>
   <!-- ./ end row -->
 </div>
 
@@ -526,55 +397,10 @@ $(document).ready(function() {
 
     </div>
     <!-- /#wrapper -->
-		
-		
-		
-	</div>
+    
+    
+    
 
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-						<ul class="footer_nav">
-							<li><a href="#">Blog</a></li>
-							<li><a href="/board/faq">FAQs</a></li>
-							<li><a href="contact.html">Contact us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-						<ul>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="footer_nav_container">
-						<div class="cr">©2022 All Rights Reserverd. Made with Elesco</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
 
-</div>
-
-<script src="/resources/elesco/js/jquery-3.2.1.min.js"></script>
-<script src="/resources/elesco/styles/bootstrap4/popper.js"></script>
-<script src="/resources/elesco/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="/resources/elesco/plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="/resources/elesco/plugins/easing/easing.js"></script>
-<script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="/resources/elesco/js/single_custom.js"></script>
 </body>
-
 </html>

@@ -28,13 +28,16 @@ public class Gr_ReplyController {
 
 	private Gr_ReplyService service;
 	
-	@PostMapping(value = "/new", consumes = "application/json", produces = {MediaType.TEXT_PLAIN_VALUE})
+	@PostMapping(value = "/new", consumes = "application/json",
+			produces = {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> create(@RequestBody Gr_ReplyVO vo){
 		log.info("ReplyVO~ ♥-♥ : " + vo);
 		int insertCount = service.register(vo);
 		log.info("Reply INSERT COUNT~ ＠-＠ : " + insertCount);
 		
-		return insertCount == 1 ? new ResponseEntity<>("success", HttpStatus.OK) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		return insertCount == 1 ? new ResponseEntity<>
+		("success", HttpStatus.OK) : new ResponseEntity<>
+		(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	@GetMapping(value = "/pages/{gr_bno}/{page}", produces = {
