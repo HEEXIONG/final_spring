@@ -191,16 +191,8 @@
 									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
 							</div>-->
-						</div>
-						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-<<<<<<< HEAD
-							<img src="file:///C:/Users/hi-guro/git/Final_Boot2/src/main/resources/static/Upload/Upload56gduNMGoOXtO6zcEU2pfXRkbQlckGiH.png">
-=======
-								<img src="/pdregist/display?fileName=Upload${read.filename}">
-								<img src="/pdregist/displayy?fileName=Upload${read.filename}">
-								<img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${read.filename}">
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring.git
+								<img src="../resources/img/UploadVZcGzlOBYl5wX4ceijClYXPYDpJ042dN.png" height="550px" width="650px">
 							</div>
 						</div>
 					</div>
@@ -514,76 +506,59 @@ $(document).ready(function() {
             responsive: true
         });
     // 아래 jQuery 소스 코드는 jQuery 교체 후 모바일 크기에서 새로 고침 할 경우에 메뉴가 펼쳐지는 문제 해결을 위한 소스 코드 삽입 입니다.
-    $(".slidebar-nav")
-    	.attr("class", "slidebar-nav navbar-collapse collapse")
-    	.attr("aria-expanded", 'false')
-    	.attr("style", "height:1px");
-    });   
-    
-    </script>  
-<<<<<<< HEAD
+        $(".slidebar-nav")
+        .attr("class", "slidebar-nav navbar-collapse collapse")
+        .attr("aria-expanded", 'false')
+        .attr("style", "height:1px");
+     });   
+     .
+     </script>  
      </div>
-        <!-- /#page-wrapper -->
-=======
-     
-     
-     
+     <!-- /#wrapper -->
+    <footer class="footer">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-6">
+                <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+                   <ul class="footer_nav">
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="/board/faq">FAQs</a></li>
+                      <li><a href="contact.html">Contact us</a></li>
+                   </ul>
+                </div>
+             </div>
+             <div class="col-lg-6">
+                <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+                   <ul>
+                      <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-lg-12">
+                <div class="footer_nav_container">
+                   <div class="cr">©2022 All Rights Reserverd. Made with Elesco</div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </footer>
 
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
-    </div>
-    <!-- /#wrapper -->
-<<<<<<< HEAD
-	</div>
-=======
-		
-		
-		
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
+ </div>
 
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-						<ul class="footer_nav">
-							<li><a href="#">Blog</a></li>
-							<li><a href="/board/faq">FAQs</a></li>
-							<li><a href="contact.html">Contact us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-						<ul>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="footer_nav_container">
-						<div class="cr">©2022 All Rights Reserverd. Made with Elesco</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+ <script src="/resources/elesco/js/jquery-3.2.1.min.js"></script>
+ <script src="/resources/elesco/styles/bootstrap4/popper.js"></script>
+ <script src="/resources/elesco/styles/bootstrap4/bootstrap.min.js"></script>
+ <script src="/resources/elesco/plugins/Isotope/isotope.pkgd.min.js"></script>
+ <script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+ <script src="/resources/elesco/plugins/easing/easing.js"></script>
+ <script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+ <script src="/resources/elesco/js/single_custom.js"></script>
+ </body>
 
-</div>
-
-<script src="/resources/elesco/js/jquery-3.2.1.min.js"></script>
-<script src="/resources/elesco/styles/bootstrap4/popper.js"></script>
-<script src="/resources/elesco/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="/resources/elesco/plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="/resources/elesco/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="/resources/elesco/plugins/easing/easing.js"></script>
-<script src="/resources/elesco/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="/resources/elesco/js/single_custom.js"></script>
-</body>
-
-</html>
+ </html>
