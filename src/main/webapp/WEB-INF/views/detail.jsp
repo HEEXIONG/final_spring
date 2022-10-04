@@ -39,6 +39,7 @@
 							<a href="/main">Elesco<span style="color: #a39292">co</span></a>
 						</div>
 						<nav class="navbar">
+						
 							<%-- <ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
 								<li><a href="#">shop</a></li>
@@ -53,6 +54,7 @@
 								<li><a href="/customLogout">Logout</a></li>
 								</sec:authorize>
 							</ul> --%>
+							
 							<ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
 								<li><a href="/board/list">notice</a></li>

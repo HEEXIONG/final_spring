@@ -34,8 +34,6 @@
 
 		<!-- Top Navigation -->
 
-		
-
 		<!-- Main Navigation -->
 
 		<div class="main_nav_container">
@@ -43,11 +41,11 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="/main">Eles<span>co</span></a>
+							<a href="/pdregist/main">Eles<span>co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="/main">home</a></li>
+								<li><a href="/pdregist/main">home</a></li>
 								<li><a href="/board/list">notice</a></li>
 								<li><a href="/qna/list">Q&A</a></li>
 								<li><a href="/group/list">Review</a></li>
@@ -71,10 +69,8 @@
 								<li><a href="/mypage/list"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 								</sec:authorize>
 								<sec:authorize access="isAnonymous()">
-								<li class="checkout"><a href="/customLogin1"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 								</sec:authorize>
 								<sec:authorize access="isAuthenticated()">
-								<li class="checkout"><a href="/cart/list"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 								</sec:authorize>
 							</ul>
 							<div class="hamburger_container">

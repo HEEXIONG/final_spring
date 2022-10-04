@@ -89,14 +89,13 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="/main">Eles<span style="color: #a39292">co</span></a>
+							<a href="/pdregist/main">Eles<span style="color: #a39292">co</span></a>
 						</div>
 						
 						
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="/main">home</a></li>
-								<li><a href="#">shop</a></li>
+								<li><a href="/pdregist/main">home</a></li>
 								<li><a href="#">notice</a></li>
 								<li><a href="/qna/list">Q&A</a></li>
 								<li><a href="#">Review</a></li>
@@ -159,7 +158,7 @@
 						 </sec:authorize>
 					</ul>
 				</li>
-				<li class="menu_item"><a href="/main">home</a></li>
+				<li class="menu_item"><a href="/pdregist/main">home</a></li>
 				<li class="menu_item"><a href="#">shop</a></li>
 				<li class="menu_item"><a href="#">notice</a></li>
 				<li class="menu_item"><a href="/qna/list">Q&A</a></li>
@@ -197,7 +196,7 @@
 								</ul>
 							</div>-->
 							<div class="single_product_image">
-								<img src="../resources/img/UploadVZcGzlOBYl5wX4ceijClYXPYDpJ042dN.png" height="550px" width="650px">
+								<img src="../resources/img/image.png" height="550px" width="650px">
 							</div>
 						</div>
 					</div>
@@ -212,17 +211,17 @@
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 					<span>${read.admin}</span>
 					</div>
-					<div class="product_price">가격 : ${read.price}</div>
+					<div class="product_price">가격 : ${read.price} 원</div>
 					<button class="red_button add_to_cart_button" style="color: #fff" type="button" onclick="fn_buy()">결제하기</button>
 					<div class="product_color">
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 					<div class="product_price">수량 : ${read.amount}</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 		</div>
-		
 		
 		<div id="wrapper container">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
