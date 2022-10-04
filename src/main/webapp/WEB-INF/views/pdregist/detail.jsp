@@ -185,7 +185,8 @@
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<!--<div class="single_product_thumbnails">
 								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
+									<li><
+ src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
 									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
 									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
@@ -193,7 +194,9 @@
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-							<img src="/img/test.png">
+								<img src="/pdregist/display?fileName=Upload${read.filename}">
+								<img src="/pdregist/displayy?fileName=Upload${read.filename}">
+								<img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${read.filename}">
 							</div>
 						</div>
 					</div>
@@ -208,13 +211,8 @@
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 					<span>${read.admin}</span>
 					</div>
-<<<<<<< HEAD
-					<div class="product_price"> 가격 : ${read.price} </div>
-					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-=======
 					<div class="product_price">가격 : ${read.price}</div>
 					<button class="red_button add_to_cart_button" style="color: #fff" type="button" onclick="fn_buy()">결제하기</button>
->>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
 					<div class="product_color">
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 					<div class="product_price">수량 : ${read.amount}</div>

@@ -338,7 +338,9 @@
 
    <!-- Newsletter -->
 
+   <script>
    
+   </script>
 
    <!-- Footer -->
 <<jsp:include page="../footer.jsp"></jsp:include>
