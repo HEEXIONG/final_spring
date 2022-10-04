@@ -37,7 +37,6 @@
                   <div class="owl-carousel owl-theme product_slider">
 
                       <!-- Slide 1 -->
-					
                      <div class="owl-item product_slider_item">
                         <div class="product-item">
                            <div class="product discount">
@@ -54,7 +53,7 @@
                      </div>  
 
                      <!-- Slide 2 -->
-					<c:forEach items="${list}" var="PdVo">
+					<c:forEach items="${list}" var="PdVo" begin="0" end="9">
                      <div class="owl-item product_slider_item">
                         <div class="product-item women">
                            <div class="product">
@@ -69,9 +68,8 @@
                            </div>
                         </div>
                      </div>
-                     </c:forEach>
+			</c:forEach>                  
                   </div>
-
                   <!-- Slider Navigation -->
 
                   <div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">

@@ -155,16 +155,15 @@
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 					<span>${read.admin}</span>
 					</div>
-					<div class="product_price">${read.price}</div>
+					<div class="product_price">가격 : ${read.price}</div>
 					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 					<div class="product_color">
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-					<div class="product_price">수량 ${read.amount} 개</div>
+					<div class="product_price">수량 : ${read.amount}</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<footer class="footer">
