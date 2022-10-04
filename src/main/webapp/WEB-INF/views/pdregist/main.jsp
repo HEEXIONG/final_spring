@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
    <jsp:include page="../header.jsp"></jsp:include>
    <!-- Slider -->
@@ -58,11 +61,11 @@
                         <div class="product-item women">
                            <div class="product">
                               <div class="product_image">
-                                 <img src="../resources/elesco/images/pd2.jpg" alt="" style="height: 220px">
+                                 <img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${PdVo.filename}" alt="" style="height: 220px">
                               </div>
                               <div class="favorite"></div>
                               <div class="product_info">
-                                 <h6 class="product_name"><a href='./main?pd_code=${PdVo.pd_code}'>${PdVo.pd_title}</a></h6>
+                                 <h6 class="product_name"><a href='detail?pd_code=${PdVo.pd_code}'>${PdVo.pd_title}</a></h6>
                                  <div class="product_price">${PdVo.price}</div>
                               </div>
                            </div>
@@ -335,7 +338,9 @@
 
    <!-- Newsletter -->
 
+   <script>
    
+   </script>
 
    <!-- Footer -->
 <<jsp:include page="../footer.jsp"></jsp:include>

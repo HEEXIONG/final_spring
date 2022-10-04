@@ -89,7 +89,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="/main">Elesco<span style="color: #a39292">co</span></a>
+							<a href="/main">Eles<span style="color: #a39292">co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
@@ -185,7 +185,8 @@
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<!--<div class="single_product_thumbnails">
 								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
+									<li><
+ src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
 									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
 									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
@@ -193,7 +194,13 @@
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
+<<<<<<< HEAD
 							<img src="file:///C:/Users/hi-guro/git/Final_Boot2/src/main/resources/static/Upload/Upload56gduNMGoOXtO6zcEU2pfXRkbQlckGiH.png">
+=======
+								<img src="/pdregist/display?fileName=Upload${read.filename}">
+								<img src="/pdregist/displayy?fileName=Upload${read.filename}">
+								<img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${read.filename}">
+>>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring.git
 							</div>
 						</div>
 					</div>
