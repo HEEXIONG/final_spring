@@ -91,6 +91,8 @@
 						<div class="logo_container">
 							<a href="/main">Eles<span style="color: #a39292">co</span></a>
 						</div>
+						
+						
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
@@ -126,6 +128,9 @@
 								<i class="fa fa-bars" aria-hidden="true"></i>
 							</div>
 						</nav>
+						
+						
+						
 					</div>
 				</div>
 			</div>

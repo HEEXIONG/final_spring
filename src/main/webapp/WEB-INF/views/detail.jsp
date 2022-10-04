@@ -39,7 +39,7 @@
 							<a href="/main">Elesco<span style="color: #a39292">co</span></a>
 						</div>
 						<nav class="navbar">
-							<ul class="navbar_menu">
+							<%-- <ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
 								<li><a href="#">shop</a></li>
 								<li><a href="#">notice</a></li>
@@ -52,7 +52,19 @@
 								 <sec:authorize access="isAuthenticated()">
 								<li><a href="/customLogout">Logout</a></li>
 								</sec:authorize>
-								
+							</ul> --%>
+							<ul class="navbar_menu">
+								<li><a href="/main">home</a></li>
+								<li><a href="/board/list">notice</a></li>
+								<li><a href="/qna/list">Q&A</a></li>
+								<li><a href="/group/list">Review</a></li>
+								<li><a href="/contact">Contact</a></li>
+								 <sec:authorize access="isAnonymous()">
+								<li><a href="/customLogin1">Login</a></li>
+								</sec:authorize>
+								 <sec:authorize access="isAuthenticated()">
+								<li><a href="/customLogout">Logout</a></li>
+								</sec:authorize>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
