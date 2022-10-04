@@ -194,9 +194,13 @@
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
+<<<<<<< HEAD
+							<img src="file:///C:/Users/hi-guro/git/Final_Boot2/src/main/resources/static/Upload/Upload56gduNMGoOXtO6zcEU2pfXRkbQlckGiH.png">
+=======
 								<img src="/pdregist/display?fileName=Upload${read.filename}">
 								<img src="/pdregist/displayy?fileName=Upload${read.filename}">
 								<img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${read.filename}">
+>>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring.git
 							</div>
 						</div>
 					</div>
@@ -220,35 +224,36 @@
 				</div>
 			</div>
 		</div>
+		</div>
 		
 		
-		<div id="wrapper">
+		<div id="wrapper container">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <div id="page-wrapper">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      
      
-      <div class='row'>
-  <div class="card mb-2">
-	<div class="card-header bg-light">
-	        <i class="fa fa-comment fa"></i> REPLY
-	</div>
-	<div class="card-body">
-		<ul class="list-group list-group-flush">
-		    <li class="list-group-item">
-			<div class="form-inline mb-2">
-				<label for="replyId"><i class="fa fa-user-circle-o fa-2x"></i></label>
-				<input type="text" class="form-control ml-2" placeholder="Enter yourId" id="replyId">
-				<label for="replyPassword" class="ml-4"><i class="fa fa-unlock-alt fa-2x"></i></label>
-				<input type="password" class="form-control ml-2" placeholder="Enter password" id="replyPassword">
-			</div>
-			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-			<button type="button" id="addReplyBtn" class="btn btn-dark mt-3">post reply</button>
-		    </li>
-		</ul>
-	</div>
-</div>
-
+      <div>
+  <div class="col-lg-12">    
+    <!-- /.panel -->
+    <div class="panel panel-default" >
+    
+      	      <div class="panel-heading" style="border-bottom: 2px #a39292 solid; margin-bottom: 1rem">
+      	      	<i class="fa fa-comments fa-fw"></i> Reply!!!
+      	      	<div class="d-flex w-100 flex-row-reverse mb-3">
+      	      		<button id="addReplyBtn" class="btn btn-primary btn-sm">New Reply!!!</button>
+    	      	</div>
+      	      </div>
+      	            	 
+      
+      	<!-- /.panel-heading -->
+      	<div class="panel-body">  
+      	    <ul class="chat">
+	        </ul>
+    	</div>
+    	<!-- /.panel .chat-panel -->
+	      	     <div class="panel-footer mb-2" style="border-top: 2px #a39292 solid;" ></div>
+     	</div>	
+  </div>
   <!-- ./ end row -->
 </div>
 
@@ -323,9 +328,9 @@ $(document).ready(function() {
 				
 				
 			for(var i = 0, len = list.length || 0; i < len; i++){
-				str += "<li class='left clearfix' data-rno='" + list[i].rno + "'>";
-				str +=" <div><div class='header'><strong class='primary-font'>"+ list[i].replyer+"</strong>";
-				str +=" <small class='pull-right text-muted'>" + replyService.displayTime(list[i].replyDate) + "</small></div>";				
+				str += "<li class='' data-rno='" + list[i].rno + "'>";
+				str +=" <div><div class=''><strong class='primary-font'>"+ list[i].replyer+"</strong>";
+				str +=" <small class='text-muted'>" + replyService.displayTime(list[i].replyDate) + "</small></div>";				
 				
 				str +=" <p>" + list[i].reply + "</p></div></li>";
 			}
@@ -353,7 +358,7 @@ $(document).ready(function() {
 			next = true;
 		}
 		
-		var str = "<ul class='pagination pull-right'>";
+		var str = "<ul class='pagination pull-right mt-3'>";
 		
 		if(prev){
 			str += "<li class='page-item'><a class='page-link' href='"+(startNum -1)+"'>Previous</a></li>";
@@ -516,11 +521,24 @@ $(document).ready(function() {
     });   
     
     </script>  
+<<<<<<< HEAD
      </div>
         <!-- /#page-wrapper -->
+=======
+     
+     
+     
+
+>>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
     </div>
     <!-- /#wrapper -->
+<<<<<<< HEAD
 	</div>
+=======
+		
+		
+		
+>>>>>>> branch 'master' of https://github.com/HEEXIONG/final_spring
 
 	<footer class="footer">
 		<div class="container">
