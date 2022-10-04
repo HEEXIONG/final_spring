@@ -8,7 +8,6 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cef989f3a7776ee7b40c53b31db405fa&libraries=services,clusterer"></script>
 
-
 <link href="/resources/css/bootstrap.css" rel="stylesheet" />
 <style type="text/css">
 .login_button_wrap {
@@ -79,8 +78,8 @@
 
 			<c:forEach items="${list}" var="PdVo">
 				<tr>
-					<td>${PdVo.pd_code}</td>
-					<td><a href='./read?pd_code=${PdVo.pd_code}'>${PdVo.pd_title}</a></td>
+					<td>${PdVo.pdcode}</td>
+					<td><a href='./read?pdcode=${PdVo.pdcode}'>${PdVo.title}</a></td>
 					<td>${PdVo.admin}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 							value="${PdVo.regdate}" /></td>

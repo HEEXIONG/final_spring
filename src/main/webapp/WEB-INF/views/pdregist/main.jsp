@@ -2,9 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 	<!-- Slider -->
-
 	<div class="main_slider" style="background-image:url(/resources/elesco/images/test1.jpg)">
 		<div class="container fill_height">
 			<div class="row align-items-center fill_height">
@@ -38,6 +37,7 @@
 						<div class="owl-carousel owl-theme product_slider">
 							<!-- Slide 1 -->
 							<div class="owl-item product_slider_item">
+					<c:forEach var="PdVo" items="${list}">
 								<div class="product-item">
 									<div class="product discount">
 										<div class="product_image">
@@ -45,13 +45,14 @@
 										</div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">${PdVo.title}</a></h6>
-											<div class="product_price">$520.00<span>$590.00</span></div>
+											<h6 class="product_name"><a href='./main?pdcode=${PdVo.pdcode}'>제목칸</a></h6>
+											<div class="product_price">${PdVo.price}</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</c:forEach>
 						<!-- Slider Navigation -->
 
 						<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
@@ -93,19 +94,20 @@
 				<div class="col">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 						<!-- Product 1 -->
-
 						<div class="product-item men">
+							<c:forEach var="PdVo" items="${list}">
 							<div class="product discount product_filter">
 								<div class="product_image">
-									<img src="/resources/elesco/images/pd1.jpg" alt="">
+									<img src="C:\Users\hi-guro\git\Final_Boot2\src\main\resources\static\Upload${PdVo.filename}" alt="">
 								</div>
 								<div class="favorite favorite_left"></div>
 								
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<h6 class="product_name"><a href='./main?pdcode=${PdVo.pdcode}'>${PdVo.title}</a></h6>
 									<div class="product_price">${PdVo.price}</div>
 								</div>
 							</div>
+						</c:forEach>
 							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 						</div>
 					</div>
