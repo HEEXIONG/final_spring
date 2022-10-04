@@ -516,17 +516,10 @@ $(document).ready(function() {
     });   
     
     </script>  
-     
-     
-     
      </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
-		
-		
-		
 	</div>
 
 	<footer class="footer">
