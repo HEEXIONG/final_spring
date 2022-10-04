@@ -48,7 +48,6 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="/main">home</a></li>
-								<li><a href="#">shop</a></li>
 								<li><a href="/board/list">notice</a></li>
 								<li><a href="/qna/list">Q&A</a></li>
 								<li><a href="/group/list">Review</a></li>
@@ -111,7 +110,6 @@
 					</ul>
 				</li>
 				<li class="menu_item"><a href="/main">home</a></li>
-				<li class="menu_item"><a href="#">shop</a></li>
 				<li class="menu_item"><a href="/board/list">notice</a></li>
 				<li class="menu_item"><a href="/qna/list">Q&A</a></li>
 				<li class="menu_item"><a href="/contact">contact</a></li>

@@ -19,15 +19,11 @@ import lombok.extern.log4j.Log4j;
 @Controller // @Controller어노테이션을 추가해서 스프링의 빈으로 인식할 수 있게 처리함
 @RequestMapping("/pdregist")
 @AllArgsConstructor
-@Log4j
 public class PdController {
 	
 	@Autowired
 	private PdService pdservice;
 	
-    @Autowired
-    private FileService mFileService;
-
 	/*
 	 * // 게시글 상세내용 불러오기
 	 * @RequestMapping("/read") public void read(Model model) throws Exception {
@@ -35,17 +31,14 @@ public class PdController {
 	 * model에 데이터 값을 담는다 }
 	 */
     
-    @GetMapping("/read")
-    public void GetPageGET(Long pdcode, Model model,FileVO filevo) throws Exception {
-    	model.addAttribute("filelist", mFileService.fileread(pdcode));
-    	model.addAttribute("read", pdservice.read(pdcode));
+    @GetMapping("/detail")
+    public void GetPageGET(Long pd_code, Model model,FileVO filevo) throws Exception {
+    	model.addAttribute("read", pdservice.read(pd_code));
     }
 	
-   @RequestMapping("/list")
+   @RequestMapping("/main")
    public void ListGET(Model model, PdVo pdboard,FileVO filevo) {
 	   List<PdVo> pdlist = pdservice.getList();
-	   List<FileVO> filelist = mFileService.getfileList();
-	    model.addAttribute("filelist", filelist);
         model.addAttribute("list", pdservice.getList());
     }
 

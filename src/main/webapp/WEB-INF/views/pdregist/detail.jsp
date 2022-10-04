@@ -140,7 +140,7 @@
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(resources/elesco/images/pd1.jpg)"></div>
+							<img src="file:///C:/Users/hi-guro/git/Final_Boot2/src/main/resources/static/Upload/Upload56gduNMGoOXtO6zcEU2pfXRkbQlckGiH.png">
 							</div>
 						</div>
 					</div>
@@ -149,17 +149,17 @@
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<h2>${read.title}</h2>
-						<p>${read.content}</p>
+						<h2>${read.pd_title}</h2>
+						<p>${read.pd_content}</p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-						<span class="ti-truck"></span><span>free delivery</span>
+					<span>${read.admin}</span>
 					</div>
 					<div class="product_price">${read.price}</div>
 					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 					<div class="product_color">
-						
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+					<div class="product_price">수량 ${read.amount} 개</div>
 					</div>
 				</div>
 			</div>

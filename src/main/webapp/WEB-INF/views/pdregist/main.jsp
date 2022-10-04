@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-   <jsp:include page="header.jsp"></jsp:include>
+   <jsp:include page="../header.jsp"></jsp:include>
    <!-- Slider -->
 
-   <div class="main_slider" style="background-image:url(/resources/elesco/images/test1.jpg)">
+   <div class="main_slider" style="background-image:url(../resources/elesco/images/test1.jpg)">
       <div class="container fill_height">
          <div class="row align-items-center fill_height">
             <div class="col">
@@ -36,13 +36,13 @@
                <div class="product_slider_container">
                   <div class="owl-carousel owl-theme product_slider">
 
-                     <!-- Slide 1 -->
-
+                      <!-- Slide 1 -->
+					
                      <div class="owl-item product_slider_item">
                         <div class="product-item">
                            <div class="product discount">
                               <div class="product_image">
-                                 <img src="/resources/elesco/images/pd1.jpg" alt="" style="height: 220px">
+                                 <img src="../resources/elesco/images/pd1.jpg" alt="" style="height: 220px">
                               </div>
                               <div class="favorite favorite_left"></div>
                               <div class="product_info">
@@ -51,162 +51,25 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div>  
 
                      <!-- Slide 2 -->
-
+					<c:forEach items="${list}" var="PdVo">
                      <div class="owl-item product_slider_item">
                         <div class="product-item women">
                            <div class="product">
                               <div class="product_image">
-                                 <img src="/resources/elesco/images/pd2.jpg" alt="" style="height: 220px">
+                                 <img src="../resources/elesco/images/pd2.jpg" alt="" style="height: 220px">
                               </div>
                               <div class="favorite"></div>
                               <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                 <div class="product_price">$610.00</div>
+                                 <h6 class="product_name"><a href='./main?pd_code=${PdVo.pd_code}'>${PdVo.pd_title}</a></h6>
+                                 <div class="product_price">${PdVo.price}</div>
                               </div>
                            </div>
                         </div>
                      </div>
-
-                     <!-- Slide 3 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item women">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd3.png" alt="" style="height: 220px">
-                              </div>
-                              <div class="favorite"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                 <div class="product_price">$120.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 4 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item accessories">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd4.png" alt="" style="height: 220px">
-                              </div>
-                              <div class="favorite favorite_left"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                 <div class="product_price">$410.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 5 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item women men">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd5.png" alt="" style="height: 220px">
-                              </div>
-                              <div class="favorite"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                 <div class="product_price">$180.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 6 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item accessories">
-                           <div class="product discount">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd6.png" alt="" style="height: 220px">
-                              </div>
-                              <div class="favorite favorite_left"></div>
-                              <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                 <div class="product_price">$520.00<span>$590.00</span></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 7 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item women">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd7.png" alt="" style="height: 220px">
-                              </div>
-                              <div class="favorite"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                 <div class="product_price">$610.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 8 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item accessories">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd8.jpg" alt="">
-                              </div>
-                              <div class="favorite"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                 <div class="product_price">$120.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 9 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item men">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd1.jpg" alt="">
-                              </div>
-                              <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                              <div class="favorite favorite_left"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                 <div class="product_price">$410.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Slide 10 -->
-
-                     <div class="owl-item product_slider_item">
-                        <div class="product-item men">
-                           <div class="product">
-                              <div class="product_image">
-                                 <img src="/resources/elesco/images/pd2.jpg" alt="">
-                              </div>
-                              <div class="favorite"></div>
-                              <div class="product_info">
-                                 <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                 <div class="product_price">$180.00</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                     </c:forEach>
                   </div>
 
                   <!-- Slider Navigation -->
@@ -240,9 +103,9 @@
                <div class="new_arrivals_sorting">
                   <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
                      <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                     <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
+                    <!--  <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
                      <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
-                     <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+                     <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li> -->
                   </ul>
                </div>
             </div>
@@ -256,7 +119,7 @@
                   <div class="product-item men">
                      <div class="product discount product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd1.jpg" alt="">
+                           <img src="../resources/elesco/images/pd1.jpg" alt="">
                         </div>
                         <div class="favorite favorite_left"></div>
                         
@@ -273,7 +136,7 @@
                   <div class="product-item women">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd2.jpg" alt="">
+                           <img src="../resources/elesco/images/pd2.jpg" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -289,7 +152,7 @@
                   <div class="product-item women">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd3.png" alt="">
+                           <img src="../resources/elesco/images/pd3.png" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -305,7 +168,7 @@
                   <div class="product-item accessories">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd4.png" alt="">
+                           <img src="../resources/elesco/images/pd4.png" alt="">
                         </div>
                         <div class="favorite favorite_left"></div>
                         <div class="product_info">
@@ -321,7 +184,7 @@
                   <div class="product-item women men">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd5.png" alt="">
+                           <img src="../resources/elesco/images/pd5.png" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -337,7 +200,7 @@
                   <div class="product-item accessories">
                      <div class="product discount product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd6.png" alt="">
+                           <img src="../resources/elesco/images/pd6.png" alt="">
                         </div>
                         <div class="favorite favorite_left"></div>
                         <div class="product_info">
@@ -353,7 +216,7 @@
                   <div class="product-item women">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd7.png" alt="">
+                           <img src="../resources/elesco/images/pd7.png" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -369,7 +232,7 @@
                   <div class="product-item accessories">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd8.jpg" alt="">
+                           <img src="../resources/elesco/images/pd8.jpg" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -385,7 +248,7 @@
                   <div class="product-item men">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd1.jpg" alt="">
+                           <img src="../resources/elesco/images/pd1.jpg" alt="">
                         </div>
                         <div class="favorite favorite_left"></div>
                         <div class="product_info">
@@ -401,7 +264,7 @@
                    <div class="product-item men">
                      <div class="product product_filter">
                         <div class="product_image">
-                           <img src="/resources/elesco/images/pd2.jpg" alt="">
+                           <img src="../resources/elesco/images/pd2.jpg" alt="">
                         </div>
                         <div class="favorite"></div>
                         <div class="product_info">
@@ -477,6 +340,6 @@
    
 
    <!-- Footer -->
-<<jsp:include page="footer.jsp"></jsp:include>
+<<jsp:include page="../footer.jsp"></jsp:include>
 
    
