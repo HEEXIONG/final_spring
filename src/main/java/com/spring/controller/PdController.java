@@ -32,8 +32,8 @@ public class PdController {
 	 */
     
     @GetMapping("/detail")
-    public void GetPageGET(Long pdcode, Model model,FileVO filevo) throws Exception {
-    	model.addAttribute("read", pdservice.read(pdcode));
+    public void GetPageGET(Long pd_code, Model model,FileVO filevo) throws Exception {
+    	model.addAttribute("read", pdservice.read(pd_code));
     }
 	
    @RequestMapping("/main")
