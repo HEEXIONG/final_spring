@@ -9,7 +9,7 @@
 						<ul class="footer_nav">
 							<li><a href="#">Blog</a></li>
 							<li><a href="/board/faq">FAQs</a></li>
-							<li><a href="contact.html">Contact us</a></li>
+							<li><a href="/contact">Contact us</a></li>
 						</ul>
 					</div>
 				</div>

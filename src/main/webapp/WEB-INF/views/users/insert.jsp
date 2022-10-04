@@ -99,16 +99,16 @@
 			<button type="button" class="w-btn w-btn-gray">주소찾기</button>
 			</div><br/>
 			<div class="form_section">
-<div class="form_section_title">
+<!-- <div class="form_section_title">
 <label>상품 이미지</label>
-</div>
+</div> -->
 <div class="form_section_content">
 <!-- 여러개 업로드(multiple) -->
 <!--<input type="file" multiple id="fileItem" name="uploadFile" style="height: 30px">  -->
 <!-- input 태그를 통해 선택된 파일은 file 객체의 형태로 표현. 이 객체는 filelist객체의 요소로 저장 
 	 이 파일객체에 접근하기 위해  input  태그의 file속성에 접근. 스크립트 사용 -->
 <!-- 하나 업로드 -->
-<input type="file" id="fileItem" name="uploadFile" style="height: 30px">
+<!-- <input type="file" id="fileItem" name="uploadFile" style="height: 30px"> -->
  <div id="uploadResult">
  <!-- 
  <div id="result_card">
@@ -125,7 +125,7 @@
             <div class="btn-area">
                 <button id="btn"  type="submit">회원가입</button>
             </div>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                
                     
         </form>
       
