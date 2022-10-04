@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="/main">Elesco<span style="color: #a39292">co</span></a>
+							<a href="/main">Eles<span style="color: #a39292">co</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
@@ -155,7 +155,7 @@
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 					<span>${read.admin}</span>
 					</div>
-					<div class="product_price">가격 : ${read.price}</div>
+					<div class="product_price"> 가격 : ${read.price} </div>
 					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 					<div class="product_color">
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
