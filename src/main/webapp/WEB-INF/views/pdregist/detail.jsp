@@ -91,8 +91,6 @@
 						<div class="logo_container">
 							<a href="/pdregist/main">Eles<span style="color: #a39292">co</span></a>
 						</div>
-						
-						
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="/pdregist/main">home</a></li>
@@ -552,9 +550,7 @@ $(document).ready(function() {
           </div>
        </div>
     </footer>
-
  </div>
-
  <script src="/resources/elesco/js/jquery-3.2.1.min.js"></script>
  <script src="/resources/elesco/styles/bootstrap4/popper.js"></script>
  <script src="/resources/elesco/styles/bootstrap4/bootstrap.min.js"></script>
